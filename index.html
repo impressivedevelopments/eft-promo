@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escape From Tarkov</title>
-  <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape From Tarkov</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  
+
+    <section class="parallax" id="scene">        
+        <div class="layer layer-bg" data-speed="20"></div>
+        <img src="img/logo.png" alt="Logo" class="layer layer-logo" data-speed="40">
+        <nav class="layer layer-menu" data-speed="60">
+            <ul>
+                <li class="layer-menu__item">Об игре </li>
+                <li class="layer-menu__item">Новости</li>
+                <li class="layer-menu__item">Форум</li>
+                <li class="layer-menu__item">Wiki</li>
+            </ul>
+        </nav>
+        <img src="img/branch.png" alt="Logo" class="layer layer-object" data-speed="60">       
+    </section>   
+
+    <script src="scripts/plugins/parallax.js"></script>
+    
 </body>
 </html>
