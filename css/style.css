@@ -114,4 +114,36 @@ a {
   top: 0;
   right: 0;
 }
+
+/* responsive */
+@media (max-width: 1886px) {
+  .layer-logo {
+    width: 950px;
+  }
+  .layer-object {
+    display: none;
+  }
+  .layer-menu__item {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .layer-logo {
+    width: 450px;
+  }
+  .layer-object {
+    display: none;
+  }
+}
+
+@media (max-width: 725px) {
+  .layer-logo {
+    width: 450px;
+    top: 30%;
+  }
+  .layer-object {
+    display: none;
+  }
+}
 /*# sourceMappingURL=style.css.map */
