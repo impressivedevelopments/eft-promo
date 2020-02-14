@@ -26,7 +26,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Bender', sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -60,18 +60,21 @@ a {
   overflow: hidden;
 }
 
+.parallax {
+  width: 100%;
+}
+
 .layer {
   position: absolute;
 }
 
 .layer-bg {
-  width: 100%;
+  width: 110%;
+  height: 110%;
   background: url("../img/bg-forest.jpg") center;
   background-size: cover;
-  top: 0;
+  top: -5%;
   bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .layer-logo {
@@ -93,6 +96,15 @@ a {
   margin-bottom: 10px;
   font-size: 42px;
   text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.layer-menu__item:hover {
+  background: #fff url("../img/hover.png");
+  color: #000;
 }
 
 .layer-object {

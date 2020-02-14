@@ -20,6 +20,8 @@
     font-style: normal;
 }
 
+$main-color: #7d6f54;
+
 /* Теги */
 
 * {
@@ -32,7 +34,7 @@ body {
     padding: 0;
 
     font-family: 'Bender', sans-serif;
-    font-weight: bold;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -57,17 +59,19 @@ a {
     overflow: hidden;
 }
 
+.parallax {
+    width: 100%;
+}
+
 .layer {
     position: absolute;
     &-bg {
-        width: 100%;
+        width: 110%;
+        height: 110%;
         background: url("../img/bg-forest.jpg") center;
         background-size: cover;
-
-        top: 0;
+        top: -5%;
         bottom: 0;
-        left: 0;
-        right: 0;
     }
     &-logo {
         width: 1000px;
@@ -83,6 +87,13 @@ a {
             margin-bottom: 10px;
             font-size: 42px;
             text-transform: uppercase;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            transition: .3s ease;
+            &:hover {
+                background: #fff url("../img/hover.png");
+                color: #000;
+            }
         }
     }
     &-object {
