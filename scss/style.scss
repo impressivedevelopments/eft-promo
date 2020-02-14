@@ -19,9 +19,15 @@
     font-weight: bold;
     font-style: normal;
 }
-  
+
+/* Теги */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
+    color: #fff;
     margin: 0;
     padding: 0;
 
@@ -36,18 +42,26 @@ ul {
     list-style: none;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 #scene {
-    max-width: 100%;
     height: 100vh;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     overflow: hidden;
 }
 
 .layer {
     position: absolute;
     &-bg {
-        width: 110%;
-        background: url("../img/bg-forest.jpg");
+        width: 100%;
+        background: url("../img/bg-forest.jpg") center;
         background-size: cover;
 
         top: 0;
@@ -57,15 +71,11 @@ ul {
     }
     &-logo {
         width: 1000px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -90%);
     }
     &-menu {
-        bottom: 10%;
-        left: 50%;
-        transform: translateX(-50%);
         color: white;
+        align-self: flex-end;
+        padding-bottom: 40px;
         ul {
             text-align: center;
         }
@@ -76,9 +86,9 @@ ul {
         }
     }
     &-object {
-        width: 850px;
+        width: 700px;
         top: 0;
-        right: -5%;
+        right: 0;
     }
 }
 
