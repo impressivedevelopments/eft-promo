@@ -76,7 +76,7 @@ $attention-color: rgba(228, 89, 3, 0.8);
 }
 
 body {
-    cursor: url("../img/cursor.cur"), pointer;
+    cursor: url("../img/cursor.cur") 2 2, pointer;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -241,4 +241,35 @@ img {
                 }
         }
     }
+}
+
+.preloader {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 10px solid #000;
+    border-radius: 50%;
+    border-right-color: #ffffff50;
+    animation: spin 500ms infinite linear;
+    z-index: 999999;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
 }
