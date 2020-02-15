@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape From Tarkov</title>
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a9b3fdd279.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-<<<<<<< HEAD
-    <section>
+    <header class="header">
         <div id="scene">
             <div class="layer factory-theme-bg layer-bg" data-speedX="5" data-speedY="3"></div>
             <div class="layer factory-theme-obj layer-obj" data-speedX="60" data-speedY="40"></div>
@@ -19,7 +19,8 @@
             </div>
             <nav class="layer layer-menu" data-speedX="0" data-speedY="0">
                 <div class="attention">
-                    <b>Внимание! Это Бета-версия Escape From Tarkov, предназначена для тестирования.</b><br>
+                    <i class="fas fa-exclamation-circle fa-3x attention-icon"></i>
+                    <span class="attention-bold">Внимание! Это Бета-версия Escape From Tarkov, предназначена для тестирования.</span><br>
                     Она не отображает финального качества продукта. Спасибо за понимание и поддержку. Удачи!
                 </div>
                 <ul>
@@ -36,45 +37,29 @@
                         <a href="#">Поддержка</a>
                     </li>
                     <li class="layer-menu__item">
-                        <a href="#">WIKI</a>
+                        <a href="#" class="wiki">WIKI</a>
                     </li>
                 </ul>
             </nav>                 
         </div>
-        <div class="second-menu">
-            <span class="version">0.12.4.2345</span>            
-            <button class="closer-btn">^</button>
-            <nav class="navigation">
-                <ul>
-                    <li>Барахолка</li>
-                    <li>Статистика</li>
-                    <li>WIKI</li>
-                </ul>
-            </nav> 
-        </div>
-    </section>
-    <script src="scripts/plugins/parallax.js"></script>    
-=======
-    <header class="header">
-        <section class="parallax">
-            <div id="scene">
-                <div class="layer layer-bg" data-speedX="10" data-speedY="5"></div>
-                <img src="img/logo.png" alt="Логотип таркова" class="layer layer-logo" data-speedX="25" data-speedY="15">
-                <nav class="layer layer-menu" data-speedX="0" data-speedY="0">
-                    <ul>
-                        <a href="#"><li class="layer-menu__item">Об игре</li></a>
-                        <a href="#"><li class="layer-menu__item">Новости</li></a>
-                        <a href="#"><li class="layer-menu__item">Форум</li></a>
-                        <a href="#"><li class="layer-menu__item">Wiki</li></a>
-                    </ul>
-                </nav>
-                <img src="img/branch.png" alt="Лапка хвои" class="layer layer-object" data-speedX="60" data-speedY="35">       
-            </div>        
-        </section>   
     </header>
 
+    <main>
+    
+    </main>
 
-    <script src="scripts/plugins/parallax.js"></script>
->>>>>>> f0e277381085aa4b89ee51023814a2d0fb8bb3af
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="version">0.12.4.2345 Бета версия</span>
+            <nav class="footer-navigation">
+                <a href="#"><i class="fas fa-shopping-basket footer-icons"></i>Барахолка</a>
+                <a href="#"><i class="far fa-chart-bar footer-icons"></i>Статистика</a>
+                <a href="#"><i class="fab fa-wikipedia-w footer-icons"></i>WIKI</a>
+                <button id="change-theme"><i class="fas fa-cogs"></i></button>
+            </nav>
+        </div>
+    </footer>
+    <script src="./scripts/plugins/parallax.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 </html>
