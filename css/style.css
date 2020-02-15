@@ -67,6 +67,7 @@ img {
 
 #scene .layer-bg {
   width: 110%;
+<<<<<<< HEAD
   top: -10%;
   left: -10%;
   right: 0;
@@ -98,6 +99,25 @@ img {
   left: 0;
   right: 0;
   z-index: 10;
+=======
+  height: 110%;
+  background: radial-gradient(rgba(255, 255, 255, 0) 50%, #000), url("../img/bg-forest.jpg");
+  background-size: cover;
+  top: -5%;
+  bottom: 0;
+}
+
+.layer-logo {
+  width: 1000px;
+  top: 10%;
+}
+
+.layer-menu {
+  color: white;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding-bottom: 70px;
+>>>>>>> f0e277381085aa4b89ee51023814a2d0fb8bb3af
 }
 
 #scene .layer-menu__item {
@@ -107,8 +127,18 @@ img {
   margin: 20px 0;
 }
 
+<<<<<<< HEAD
 #scene .layer-menu__item a {
   padding: 5px 20px;
+=======
+.layer-menu__item {
+  margin-bottom: 10px;
+  padding: 0px 15px;
+  font-size: 42px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 3px;
+>>>>>>> f0e277381085aa4b89ee51023814a2d0fb8bb3af
   -webkit-transition: .3s ease;
   transition: .3s ease;
   border: 1px solid transparent;
@@ -186,5 +216,37 @@ img {
   top: 0;
   right: 0;
   bottom: 20%;
+}
+
+/* responsive */
+@media (max-width: 1886px) {
+  .layer-logo {
+    width: 950px;
+  }
+  .layer-object {
+    display: none;
+  }
+  .layer-menu__item {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .layer-logo {
+    width: 450px;
+  }
+  .layer-object {
+    display: none;
+  }
+}
+
+@media (max-width: 725px) {
+  .layer-logo {
+    width: 450px;
+    top: 30%;
+  }
+  .layer-object {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

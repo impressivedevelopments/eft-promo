@@ -155,11 +155,18 @@ img {
 
 .factory-theme {
     &-bg {
+<<<<<<< HEAD
         background: radial-gradient(rgba(255, 255, 255, 0) 40%, #000),
                 url("../img/factory-theme-bg.jpg") center no-repeat;   
     
+=======
+        width: 110%;
+        height: 110%;
+        background:  radial-gradient(rgba(255, 255, 255, 0) 50%, #000), url("../img/bg-forest.jpg");
+>>>>>>> f0e277381085aa4b89ee51023814a2d0fb8bb3af
         background-size: cover;
     }
+<<<<<<< HEAD
     &-obj { 
         width: 400px;
 
@@ -178,6 +185,32 @@ img {
                 url("../img/woods-theme-bg.jpg") center no-repeat;   
     
         background-size: cover;  
+=======
+    &-logo {
+        width: 1000px;
+        top: 10%;
+    }
+    &-menu {
+        color: white;
+        align-self: flex-end;
+        padding-bottom: 70px;
+        ul {
+            text-align: center;
+        }
+        &__item {
+            margin-bottom: 10px;
+            padding: 0px 15px;
+            font-size: 42px;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            transition: .3s ease;
+            &:hover {
+                background: #fff url("../img/hover.png");
+                color: #000;
+            }
+        }
+>>>>>>> f0e277381085aa4b89ee51023814a2d0fb8bb3af
     }
     &-obj {
         width: 900px;
@@ -193,3 +226,46 @@ img {
 }
 
 
+<<<<<<< HEAD
+=======
+/* responsive */
+@media(max-width: 1886px) {
+    .layer {
+        &-logo {
+            width: 950px;
+        }
+
+        &-object {
+            display: none;
+        }
+        &-menu {
+            &__item {
+                font-size: 46px;
+            }
+        }
+    }
+}
+@media(max-width: 1100px) {
+    .layer {
+        &-logo {
+            width: 450px;
+        }
+
+        &-object {
+           display: none;
+        }
+    }
+}
+@media(max-width: 725px) {
+    .layer {
+        &-logo {
+            width: 450px;
+            top: 30%;
+        }
+
+        &-object {
+            display: none;
+        }
+    }
+}
+>>>>>>> f0e277381085aa4b89ee51023814a2d0fb8bb3af
