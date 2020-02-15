@@ -256,11 +256,20 @@ img {
 }
 
 .preloader {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 0;
   bottom: 0;
   right: 0;
   left: 0;
+  background-color: #fff;
+  z-index: 999998;
+}
+
+.spiner {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
   margin: 0 auto;
   width: 100px;
   height: 100px;
@@ -269,7 +278,7 @@ img {
   border-right-color: #ffffff50;
   -webkit-animation: spin 500ms infinite linear;
           animation: spin 500ms infinite linear;
-  z-index: 999999;
+  z-index: 999998;
 }
 
 @-webkit-keyframes spin {
@@ -292,7 +301,7 @@ img {
   opacity: 0;
 }
 
-.loaded .preloader {
+.loaded .preloader, .loaded .spiner {
   display: none;
 }
 /*# sourceMappingURL=style.css.map */
