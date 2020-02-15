@@ -15,7 +15,6 @@ changeButton.addEventListener('click', () => {
 
 window.addEventListener('load', () => {
   document.body.classList.add('loaded_hiding');
-  document.body.style.backgroundColor = '#fff';
   window.setTimeout(function () {
     document.body.classList.add('loaded');
     document.body.classList.remove('loaded_hiding');
