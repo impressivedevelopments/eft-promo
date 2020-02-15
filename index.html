@@ -9,26 +9,49 @@
 </head>
 <body>
 
-    <section class="parallax">
+    <section>
         <div id="scene">
-            <div class="layer layer-bg" data-speedX="10" data-speedY="5"></div>
-            
-            <img src="img/logo.png" alt="Logo" class="layer layer-logo" data-speedX="25" data-speedY="15">
+            <div class="layer factory-theme-bg layer-bg" data-speedX="5" data-speedY="3"></div>
+            <div class="layer factory-theme-obj layer-obj" data-speedX="60" data-speedY="40"></div>
+            <div class="layer layer-logo" data-speedX="10" data-speedY="8">
+                <img src="img/logo.png" alt="">
+            </div>
             <nav class="layer layer-menu" data-speedX="0" data-speedY="0">
+                <div class="attention">
+                    <b>Внимание! Это Бета-версия Escape From Tarkov, предназначена для тестирования.</b><br>
+                    Она не отображает финального качества продукта. Спасибо за понимание и поддержку. Удачи!
+                </div>
                 <ul>
-                    <a href="#"><li class="layer-menu__item">Об игре </li></a>
-                    <a href="#"><li class="layer-menu__item">Новости</li></a>
-                    <a href="#"><li class="layer-menu__item">Форум</li></a>
-                    <a href="#"><li class="layer-menu__item">Wiki</li></a>
+                    <li class="layer-menu__item">
+                        <a href="#">Об игре</a>
+                    </li>
+                    <li class="layer-menu__item">
+                        <a href="#">Медиа</a>
+                    </li>
+                    <li class="layer-menu__item">
+                        <a href="#">Форум</a>
+                    </li>
+                    <li class="layer-menu__item">
+                        <a href="#">Поддержка</a>
+                    </li>
+                    <li class="layer-menu__item">
+                        <a href="#">WIKI</a>
+                    </li>
+                </ul>
+            </nav>                 
+        </div>
+        <div class="second-menu">
+            <span class="version">0.12.4.2345</span>            
+            <button class="closer-btn">^</button>
+            <nav class="navigation">
+                <ul>
+                    <li>Барахолка</li>
+                    <li>Статистика</li>
+                    <li>WIKI</li>
                 </ul>
             </nav> 
-                        
-            <img src="img/branch.png" alt="Logo" class="layer layer-object" data-speedX="60" data-speedY="35">       
-        </div>        
-       
-    </section>   
-
-    <script src="scripts/plugins/parallax.js"></script>
-    
+        </div>
+    </section>
+    <script src="scripts/plugins/parallax.js"></script>    
 </body>
 </html>

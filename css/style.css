@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Шрифты */
 @font-face {
   font-family: 'Bender';
   src: url("../fonts/Bender.eot");
@@ -15,6 +16,7 @@
   font-style: normal;
 }
 
+/* Цвета */
 /* Теги */
 * {
   -webkit-box-sizing: border-box;
@@ -41,75 +43,148 @@ a {
   text-decoration: none;
 }
 
-#scene {
-  height: 100vh;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  overflow: hidden;
+button {
+  outline: none;
+  border: none;
 }
 
-.parallax {
+img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.layer {
+#scene {
+  max-width: 100%;
+  height: 98vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#scene .layer {
   position: absolute;
 }
 
-.layer-bg {
+#scene .layer-bg {
   width: 110%;
-  height: 110%;
-  background: url("../img/bg-forest.jpg") center;
-  background-size: cover;
-  top: -5%;
+  top: -10%;
+  left: -10%;
+  right: 0;
   bottom: 0;
 }
 
-.layer-logo {
-  width: 1000px;
+#scene .layer-logo {
+  width: 1100px;
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
-.layer-menu {
-  color: white;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  padding-bottom: 40px;
+#scene .layer-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
-.layer-menu ul {
+#scene .layer-menu__item {
+  font-size: 38px;
   text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0;
 }
 
-.layer-menu__item {
-  margin-bottom: 10px;
-  font-size: 42px;
-  text-transform: uppercase;
-  border: 1px solid transparent;
-  border-radius: 3px;
+#scene .layer-menu__item a {
+  padding: 5px 20px;
   -webkit-transition: .3s ease;
   transition: .3s ease;
+  border: 1px solid transparent;
+  border-radius: 3px;
 }
 
-.layer-menu__item:hover {
+#scene .layer-menu__item a:hover {
   background: #fff url("../img/hover.png");
+  background-size: cover;
   color: #000;
 }
 
-.layer-object {
-  width: 700px;
+#scene .layer-obj {
+  z-index: 5;
+}
+
+.attention {
+  width: 900px;
+  padding: 15px 10px;
+  background: rgba(228, 89, 3, 0.8);
+  color: #000;
+  font-size: 20px;
+  margin: 50px auto;
+}
+
+.second-menu {
+  width: 100%;
+  height: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #000;
+  color: #fff;
+  border-top: 1px solid #fff;
+  font-size: 16px;
+}
+
+.second-menu .closer-btn {
+  width: 100%;
+}
+
+.second-menu .navigation ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Темы */
+.factory-theme-bg {
+  background: radial-gradient(rgba(255, 255, 255, 0) 40%, #000), url("../img/factory-theme-bg.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.factory-theme-obj {
+  width: 400px;
+  background: url("../img/lamp.png") no-repeat;
+  background-size: contain;
+  top: -10%;
+  right: 10%;
+  bottom: 50%;
+}
+
+.woods-theme-bg {
+  background: radial-gradient(rgba(255, 255, 255, 0) 40%, #000), url("../img/woods-theme-bg.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.woods-theme-obj {
+  width: 900px;
+  background: url("../img/brench.png") no-repeat;
+  background-size: contain;
   top: 0;
   right: 0;
+  bottom: 20%;
 }
 /*# sourceMappingURL=style.css.map */
