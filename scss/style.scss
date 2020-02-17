@@ -39,27 +39,23 @@
         background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/factory-theme-bg.webp") center no-repeat;
         background-size: cover;
     }
-
     &-obj {
-        background: url("../img/lamp.webp") no-repeat;
-        background-size: contain;
         top: -15%;
         left: 0;
         right: -30%;
         bottom: 0;
+        &__img {
+            animation: swang 5s ease-in-out infinite;
+        }
     }
 }
-
 .woods-theme {
     &-bg {
         background: radial-gradient(rgba(255, 255, 255, 0) 40%, #000), url("../img/woods-theme-bg.jpg") center no-repeat;
         background-size: cover;
     }
-
     &-obj {
         width: 900px;
-        background: url("../img/branch.png") no-repeat;
-        background-size: contain;
         top: 0;
         right: 0;
         bottom: 20%;
@@ -300,17 +296,36 @@ img {
     z-index: 999998;
 }
 
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader,
+.loaded .spiner {
+    display: none;
+}
+
+/* Анимации */
+
+// анимация спинера
 @keyframes spin {
     100% {
         transform: rotate(360deg);
     }
 }
 
-.loaded_hiding .preloader {
-    transition: 0.3s opacity;
-    opacity: 0;
-}
+// анимация лампы
+@keyframes swang {
+    0% {
+        transform: rotate(2deg);
+    }
 
-.loaded .preloader, .loaded .spiner {
-    display: none;
+    50% {
+        transform: rotate(-4deg);
+    }
+
+    100% {
+        transform: rotate(2deg);
+    }
 }

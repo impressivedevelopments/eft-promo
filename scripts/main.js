@@ -1,6 +1,7 @@
 'use strict';
 let bgTheme = document.querySelector('.factory-theme-bg'),
-    objTheme = document.querySelector('.factory-theme-obj');
+    objTheme = document.querySelector('.factory-theme-obj'),
+    imgTheme = document.querySelector('.factory-theme-obj__img');
 
 const changeButton = document.getElementById('change-theme');
 
@@ -11,20 +12,28 @@ document.body.addEventListener('contextmenu', (event) => {
 
 // изменение темы
 changeButton.addEventListener('click', () => {
-    if (bgTheme.classList.contains('factory-theme-bg')) {
+      if (bgTheme.classList.contains('factory-theme-bg')) {
+        imgTheme.classList.remove('factory-themeobj__img');
+        imgTheme.classList.add('woods-theme-obj__img');
+        imgTheme.setAttribute('src', "img/branch.png");
+
         bgTheme.classList.remove('factory-theme-bg');
         bgTheme.classList.add('woods-theme-bg');
+
         objTheme.classList.remove('factory-theme-obj');
         objTheme.classList.add('woods-theme-obj');
-    } else {
+      } else {
+        imgTheme.classList.remove('woods-theme-obj__img');
+        imgTheme.classList.add('factory-theme-obj__img');
+        imgTheme.setAttribute('src', "img/lamp.webp");
+
         bgTheme.classList.remove('woods-theme-bg');
         bgTheme.classList.add('factory-theme-bg');
+
         objTheme.classList.remove('woods-theme-obj');
         objTheme.classList.add('factory-theme-obj');
-    }
-  
+      }
 });
-
 // прелоадер
 window.addEventListener('load', () => {
   document.body.classList.add('loaded_hiding');

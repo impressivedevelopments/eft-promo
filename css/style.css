@@ -36,12 +36,15 @@
 }
 
 .factory-theme-obj {
-  background: url("../img/lamp.webp") no-repeat;
-  background-size: contain;
   top: -15%;
   left: 0;
   right: -30%;
   bottom: 0;
+}
+
+.factory-theme-obj__img {
+  -webkit-animation: swang 5s ease-in-out infinite;
+          animation: swang 5s ease-in-out infinite;
 }
 
 .woods-theme-bg {
@@ -51,8 +54,6 @@
 
 .woods-theme-obj {
   width: 900px;
-  background: url("../img/branch.png") no-repeat;
-  background-size: contain;
   top: 0;
   right: 0;
   bottom: 20%;
@@ -324,13 +325,24 @@ img {
   z-index: 999998;
 }
 
+.loaded_hiding .preloader {
+  -webkit-transition: 0.3s opacity;
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader,
+.loaded .spiner {
+  display: none;
+}
+
+/* Анимации */
 @-webkit-keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
 }
-
 @keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
@@ -338,13 +350,33 @@ img {
   }
 }
 
-.loaded_hiding .preloader {
-  -webkit-transition: 0.3s opacity;
-  transition: 0.3s opacity;
-  opacity: 0;
+@-webkit-keyframes swang {
+  0% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  50% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  100% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
 }
 
-.loaded .preloader, .loaded .spiner {
-  display: none;
+@keyframes swang {
+  0% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  50% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  100% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */
