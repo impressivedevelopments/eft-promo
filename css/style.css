@@ -36,7 +36,7 @@
 }
 
 .factory-theme-obj {
-  background: url("../img/lamp.png") no-repeat;
+  background: url("../img/lamp.webp") no-repeat;
   background-size: contain;
   top: -15%;
   left: 0;
@@ -212,6 +212,7 @@ img {
   top: 10.8%;
 }
 
+/* Об игре */
 .section-about {
   height: 1000px;
   background: #000 url("../img/about_bg.png") 100% 100% no-repeat;
@@ -230,6 +231,7 @@ img {
   color: #bebebe;
 }
 
+/* Подвал */
 .footer {
   margin-top: auto;
   padding: 1px 20px;
@@ -274,6 +276,7 @@ img {
   color: #000;
 }
 
+/* Прелоадер */
 .preloader {
   position: fixed;
   top: 0;
