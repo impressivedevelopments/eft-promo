@@ -1,16 +1,26 @@
 'use strict';
 let bgTheme = document.querySelector('.factory-theme-bg'),
-  objTheme = document.querySelector('.factory-theme-obj');
+    objTheme = document.querySelector('.factory-theme-obj');
 
 const changeButton = document.getElementById('change-theme');
 
 document.body.addEventListener('contextmenu', (event) => {
-  event.preventDefault();
+    event.preventDefault();
 });
 
 changeButton.addEventListener('click', () => {
-  bgTheme.classList.toggle('woods-theme-bg');
-  objTheme.classList.toggle('woods-theme-obj');
+    if (bgTheme.classList.contains('factory-theme-bg')) {
+        bgTheme.classList.remove('factory-theme-bg');
+        bgTheme.classList.add('woods-theme-bg');
+        objTheme.classList.remove('factory-theme-obj');
+        objTheme.classList.add('woods-theme-obj');
+    } else {
+        bgTheme.classList.remove('woods-theme-bg');
+        bgTheme.classList.add('factory-theme-bg');
+        objTheme.classList.remove('woods-theme-obj');
+        objTheme.classList.add('factory-theme-obj');
+    }
+  
 });
 
 window.addEventListener('load', () => {
