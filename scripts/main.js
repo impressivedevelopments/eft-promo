@@ -13,7 +13,7 @@ document.body.addEventListener('contextmenu', (event) => {
 // изменение темы
 changeButton.addEventListener('click', () => {
       if (bgTheme.classList.contains('factory-theme-bg')) {
-        imgTheme.classList.remove('factory-themeobj__img');
+        imgTheme.classList.remove('factory-theme-obj__img');
         imgTheme.classList.add('woods-theme-obj__img');
         imgTheme.setAttribute('src', "img/branch.png");
 
@@ -34,6 +34,7 @@ changeButton.addEventListener('click', () => {
         objTheme.classList.add('factory-theme-obj');
       }
 });
+
 // прелоадер
 window.addEventListener('load', () => {
   document.body.classList.add('loaded_hiding');
@@ -57,6 +58,3 @@ anchors.forEach((elem) => {
     });
   });
 });
-
-
-
