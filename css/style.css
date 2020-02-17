@@ -16,6 +16,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Neusa';
+  src: url("../fonts/Neusa-DemiBold.eot");
+  src: local("../fonts/Neusa-DemiBold"), url("../fonts/Neusa-DemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Neusa-DemiBold.woff") format("woff"), url("../fonts/Neusa-DemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 /* Темы и цвета */
 #change-theme {
   background-color: transparent;
@@ -268,13 +276,16 @@ img {
   border-radius: 5px;
 }
 
-.section-about-content p {
-  width: 800px;
+.section-about-content__img img {
+  height: 100%;
+  width: 100%;
 }
 
-.section-about p {
+.section-about-description {
+  font-family: 'Neusa';
   font-size: 20px;
   color: #aaaaaa;
+  width: 800px;
 }
 
 /* Подвал */

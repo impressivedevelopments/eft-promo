@@ -21,6 +21,16 @@
     font-weight: bold;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Neusa';
+    src: url('../fonts/Neusa-DemiBold.eot');
+    src: local('../fonts/Neusa-DemiBold'),
+        url('../fonts/Neusa-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Neusa-DemiBold.woff') format('woff'),
+        url('../fonts/Neusa-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
 
 /* Темы и цвета */
 #change-theme {
@@ -59,9 +69,6 @@
         top: 0;
         right: 0;
         bottom: 20%;
-    }
-    &__img {
-        
     }
 }
 
@@ -248,14 +255,18 @@ img {
             height: 250px;
             border: 3px solid $main-color;
             border-radius: 5px;
+            img {
+                height: 100%;
+                width: 100%;
+            }
         }
-        p {
-            width: 800px;
-        }
+        
     }
-    p {
+    &-description {
+        font-family: 'Neusa';
         font-size: 20px;
         color: rgb(170, 170, 170);
+        width: 800px;
     }
 }
 
