@@ -4,10 +4,12 @@ let bgTheme = document.querySelector('.factory-theme-bg'),
 
 const changeButton = document.getElementById('change-theme');
 
+// контекст меню
 document.body.addEventListener('contextmenu', (event) => {
     event.preventDefault();
 });
 
+// изменение темы
 changeButton.addEventListener('click', () => {
     if (bgTheme.classList.contains('factory-theme-bg')) {
         bgTheme.classList.remove('factory-theme-bg');
@@ -23,12 +25,28 @@ changeButton.addEventListener('click', () => {
   
 });
 
+// прелоадер
 window.addEventListener('load', () => {
   document.body.classList.add('loaded_hiding');
   window.setTimeout(function () {
     document.body.classList.add('loaded');
     document.body.classList.remove('loaded_hiding');
   }, 500);
+});
+
+// плавная прокрутка страницы
+const anchors = document.querySelectorAll('a[href*="#"]');
+anchors.forEach((elem) => {
+  elem.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const blockID = elem.getAttribute('href').substr(1);
+
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
 });
 
 
