@@ -118,11 +118,12 @@ h1, h2, h3 {
 
 h2 {
     font-size: 36px;
+    text-transform: uppercase;
 }
 
 h3 {
-    font-size: 24px;
     margin: 50px 0 10px 0;
+    font-size: 24px;
 }
 
 button {
@@ -228,6 +229,7 @@ img {
         top: 11.8%;
     }
 }
+
 .scroll {
     width: auto;
 }
@@ -248,7 +250,7 @@ img {
     }
     &-content {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-between;
         &__img {
             width: 400px;
@@ -263,10 +265,18 @@ img {
         
     }
     &-description {
+        width: 800px;
+        padding: 0 20px;
+    }
+    p, li {
+        padding: 0;
         font-family: 'Neusa';
         font-size: 20px;
         color: rgb(170, 170, 170);
-        width: 800px;
+    }
+    &-list__item {
+        list-style: square;
+        margin-top: 20px;
     }
 }
 
