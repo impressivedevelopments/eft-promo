@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape From Tarkov</title>
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -14,7 +16,7 @@
         <div id="scene">
             <div class="layer factory-theme-bg layer-bg" data-speedX="5" data-speedY="3"></div>
             <div class="layer factory-theme-obj layer-obj" data-speedX="60" data-speedY="40">
-                <img class="factory-theme-obj__img" src="img/lamp.webp" alt="">
+                <img class="factory-theme-obj__img" src="img/theme/lamp.webp" alt="">
             </div>
             <div class="layer layer-logo" data-speedX="10" data-speedY="8">
                 <img src="img/logo.webp" alt="">
@@ -52,7 +54,7 @@
         <section class="section section-about" id="section-about">
             <div class="container">
                 <img class="bs-logo" src="./img/bs_logo.webp" alt="battle state logo">
-                <h2 class="section-about-title">Об игре</h2>
+                <h2 class="section-title">Об игре</h2>
                 <p>
                     Escape from Tarkov / Побег из Таркова - это хардкорная реалистичная сюжетная многопользовательская онлайн-игра, 
                     сочетающая в себе черты жанров FPS / TPS, боевого симулятора и RPG c ММО элементами.
@@ -72,10 +74,10 @@
                     Выходы из Таркова перекрыты миротворцами ООН и российскими войсками, все линии снабжения отрезаны, а связь с командованием утрачена. 
                     В таких условиях каждому приходится самому выбирать, как выжить, что делать, и как выбраться из погрузившегося в пучину хаоса мегаполиса.
                 </p>
-                <h3 class=" wow fadeInLeft" data-wow-delay="0.2s">Город Тарков, Норвинская область, наши дни.</h3>
-                <div class="section-about-content wow fadeInLeft" data-wow-delay="0.2s">
+                <h3 class=" wow fadeInLeft" data-wow-delay="0.3s">Город Тарков, Норвинская область, наши дни.</h3>
+                <div class="section-about-content wow fadeInLeft" data-wow-delay="0.4s">
                     <div class="section-about-content__img">
-                        <img class="" src="./img/tarkov-map.jpg" alt="">
+                        <img class="" src="./img/about/tarkov-map.jpg" alt="">
                     </div>
                     <p class="section-about-description">
                         События Escape from Tarkov / Побега из Таркова происходят в вымышленной Норвинской особой экономической зоне, 
@@ -88,7 +90,7 @@
                     </p>
                 </div>
                 <h3 class="wow fadeInRight" data-wow-delay="0.3s">Знай врага в лицо.</h3>
-                <div class="section-about-content wow fadeInRight" data-wow-delay="0.3s">
+                <div class="section-about-content wow fadeInRight" data-wow-delay="0.4s">
                     <p class="section-about-description">
                         Главными действующими
                         силами в Норвинской области остаются две частные военные компании, нанятые сторонами
@@ -100,13 +102,13 @@
                         но формально нанятая властями Норвинской области для расследования и добычи любых доказательств противоправных действий Terra Group.
                     </p>                    
                     <div class="section-about-content__img">
-                        <img class="" src="./img/pms.jpg" alt="">
+                        <img class="" src="./img/about/pms.jpg" alt="">
                     </div>               
                 </div>
-                <h3 class="wow fadeInLeft" data-wow-delay="0.4s">Прочувствуйте игру до конца благодаря глубочайшей имитации боевых условий.</h3>
+                <h3 class="wow fadeInLeft" data-wow-delay="0.3s">Прочувствуйте игру до конца благодаря глубочайшей имитации боевых условий.</h3>
                 <div class="section-about-content wow fadeInLeft" data-wow-delay="0.4s">                 
                     <div class="section-about-content__img">
-                        <img class="" src="./img/health-system.webp" alt="">
+                        <img class="" src="./img/about/health-system.webp" alt="">
                     </div> 
                     <ul class="section-about-description">
                         <li class="section-about-list__item">
@@ -121,10 +123,10 @@
                         </li>
                     </ul>                 
                 </div>  
-                <h3 class="wow fadeInLeft" data-wow-delay="0.4s">Что-то эпичное и пафосное про оружие и боевую подготовку</h3>
+                <h3 class="wow fadeInLeft" data-wow-delay="0.3s">Что-то эпичное и пафосное про оружие и боевую подготовку</h3>
                 <div class="section-about-content wow fadeInLeft" data-wow-delay="0.4s">                   
                     <div class="section-about-content__img">
-                        <img class="" src="./img/weapon-parts.webp" alt="">
+                        <img class="" src="./img/about/weapon-parts.webp" alt="">
                     </div> 
                     <ul class="section-about-description">
                         <li class="section-about-list__item">
@@ -144,7 +146,7 @@
                         </li>
                     </ul>               
                 </div>   
-                <h3 class="wow fadeInLeft" data-wow-delay="0.4s">Выживайте и будьте начеку.</h3>
+                <h3 class="wow fadeInLeft" data-wow-delay="0.3s">Выживайте и будьте начеку.</h3>
                 <div class="section-about-content wow fadeInLeft" data-wow-delay="0.4s">
                     <ul class="section-about-description">
                         <li class="section-about-list__item">
@@ -170,10 +172,10 @@
                         </li>
                     </ul>                    
                     <div class="section-about-content__img">
-                        <img class="" src="./img/prepare-to-survive.webp" alt="">
+                        <img class="" src="./img/about/prepare-to-survive.webp" alt="">
                     </div>               
                 </div>   
-                <h3 class="wow fadeInLeft" data-wow-delay="0.4s">Берегитесь Диких.</h3>
+                <h3 class="wow fadeInLeft" data-wow-delay="0.3s">Берегитесь Диких.</h3>
                 <div class="section-about-content wow fadeInLeft" data-wow-delay="0.4s">
                     <ul class="section-about-description">
                         <li class="section-about-list__item">
@@ -187,9 +189,83 @@
                         </li>
                     </ul>                    
                     <div class="section-about-content__img">
-                        <img class="" src="./img/scavs.webp" alt="">
+                        <img class="" src="./img/about/scavs.webp" alt="">
                     </div>               
-                </div>                            
+                </div>   
+                <!-- button pre-oreder -->                         
+            </div>
+        </section>
+
+        <section class="section section-media">
+            <div class="container">
+                <h2 class="section-title">Медиа</h2>
+                <div class="section-media-movies">
+                    <h3>Видео</h3>
+                    <div class="swiper-container-m">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a class="movie" data-fancybox href="https://www.youtube.com/watch?v=UPnrY5BxddI&t=6s">
+                                    <span class="movie-title">Raid</span> 
+                                    <span class="movie-subtitle">Episode 1</span>    
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a class="movie" data-fancybox href="https://www.youtube.com/watch?v=N4s_qPNutDA">
+                                    <span class="movie-title">Raid</span> 
+                                    <span class="movie-subtitle">Episode 2</span>
+                                </a>                          
+                            </div>
+                            <div class="swiper-slide">
+                                <a class="movie" data-fancybox href="https://www.youtube.com/watch?v=ISRskAi9q5A">
+                                    <span class="movie-title">Raid</span> 
+                                    <span class="movie-subtitle">Episode 3</span>   
+                                </a>                          
+                            </div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <div class="section-media-gallery">
+                    <h3>Галерея</h3>
+                    <div class="swiper-container-g">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="https://www.escapefromtarkov.com/uploads/content/media/thumb_ed5fc91b1ffc7cab40da1784d7af0fb4.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://www.escapefromtarkov.com/uploads/content/media/thumb_bc5c7bd3d8a7fa23ace383603fb7e143.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://www.escapefromtarkov.com/uploads/content/media/thumb_712c2c7d476b3ab7b990221cba031602.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://www.escapefromtarkov.com/uploads/content/media/thumb_ca421d31c29659ee0136a1de5ac9e1fb.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://www.escapefromtarkov.com/uploads/content/media/thumb_f3254ff396446adc9dc18969d93dc4a9.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://www.escapefromtarkov.com/uploads/content/media/thumb_12dbbfd3117389c086e7a8c1735c81bf.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://www.escapefromtarkov.com/uploads/content/media/thumb_d0556de3f91c0055bc927063fcd50a50.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://www.escapefromtarkov.com/uploads/content/media/thumb_3cb8afff858084f5a9380b75a7dbfaeb.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://www.escapefromtarkov.com/uploads/content/media/thumb_59952b7c65808b8989872bb5186a0966.jpg" alt="">
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -212,10 +288,16 @@
 
     <!-- Иконочные шрифты -->
     <script src="https://kit.fontawesome.com/a9b3fdd279.js"></script>
+    <!-- JQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <!-- fancybox -->
+    <script src="./scripts/plugins/jquery.fancybox.min.js"></script>
     <!-- Библиотека анимации -->
     <script src="./scripts/plugins/wow.min.js"></script>
     <!-- Параллакс -->
     <script src="./scripts/plugins/parallax.js"></script>
+    <!-- Слайдер -->
+    <script src="./scripts/plugins/swiper.min.js"></script>
     <!-- Основной скрипт -->
     <script src="./scripts/main.js"></script>
 </body>

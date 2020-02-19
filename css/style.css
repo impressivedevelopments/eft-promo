@@ -39,7 +39,7 @@
 }
 
 .factory-theme-bg {
-  background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/factory-theme-bg.webp") center no-repeat;
+  background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/theme/factory-theme-bg.webp") center no-repeat;
   background-size: cover;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .woods-theme-bg {
-  background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/woods-theme-bg.jpg") center no-repeat;
+  background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/theme/woods-theme-bg.jpg") center no-repeat;
   background-size: cover;
 }
 
@@ -240,22 +240,25 @@ img {
   width: auto;
 }
 
-/* Об игре */
 .bs-logo {
   width: 350px;
   margin: 0 auto;
   display: block;
 }
 
-.section-about {
+.section {
   padding: 50px 0;
-  background: #000 url("../img/about_bg.png") 100% 100% no-repeat;
-  background-size: cover;
+  background: #000;
 }
 
-.section-about-title {
+.section-title {
   text-align: center;
   font-size: 36px;
+}
+
+.section-about {
+  background: url("../img/about/about_bg.png") 100% 100% no-repeat;
+  background-size: cover;
 }
 
 .section-about-content {
@@ -296,7 +299,7 @@ img {
 
 .section-about-list__item {
   list-style: square;
-  margin-top: 20px;
+  margin: 10px 0;
 }
 
 /* Подвал */
@@ -344,6 +347,57 @@ img {
 .footer-navigation a:hover {
   background: #fff url("../img/hover.png");
   color: #000;
+}
+
+.swiper-container-m, .swiper-container-g {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-container-m {
+  height: 600px;
+}
+
+.swiper-slide .movie {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.swiper-slide .movie-title {
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.swiper-pagination-bullet-active {
+  background: #9a8866;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #9a8866;
+  bottom: 0;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: #9a8866;
 }
 
 /* Прелоадер */

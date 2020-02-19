@@ -46,7 +46,7 @@
 }
 .factory-theme {
     &-bg {
-        background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/factory-theme-bg.webp") center no-repeat;
+        background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/theme/factory-theme-bg.webp") center no-repeat;
         background-size: cover;
     }
     &-obj {
@@ -61,7 +61,7 @@
 }
 .woods-theme {
     &-bg {
-        background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/woods-theme-bg.jpg") center no-repeat;
+        background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/theme/woods-theme-bg.jpg") center no-repeat;
         background-size: cover;
     }
     &-obj {
@@ -234,52 +234,58 @@ img {
     width: auto;
 }
 
-/* Об игре */
 .bs-logo {
     width: 350px;
     margin: 0 auto;
     display: block;
 }
-.section-about {
+.section {
     padding: 50px 0;
-    background: #000 url('../img/about_bg.png') 100% 100% no-repeat;
-    background-size: cover; 
+    background: #000;
     &-title {
         text-align: center;
         font-size: 36px;
     }
-    &-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        &__img {
-            width: 400px;
-            height: 250px;
-            border: 3px solid $main-color;
-            border-radius: 5px;
-            img {
-                height: 100%;
-                width: 100%;
+    // Об игре
+    &-about {
+        background: url('../img/about/about_bg.png') 100% 100% no-repeat;
+        background-size: cover;         
+        &-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &__img {
+                width: 400px;
+                height: 250px;
+                border: 3px solid $main-color;
+                border-radius: 5px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
             }
+            
         }
+        &-description {
+            width: 800px;
+            padding: 0 20px;
+        }
+        p, li {
+            padding: 0;
+            font-family: 'Neusa';
+            font-size: 20px;
+            color: rgb(170, 170, 170);
+        }
+        &-list__item {
+            list-style: square;
+            margin: 10px 0;
+        }
+    }
+    // Медиа
+    &-media {
         
     }
-    &-description {
-        width: 800px;
-        padding: 0 20px;
-    }
-    p, li {
-        padding: 0;
-        font-family: 'Neusa';
-        font-size: 20px;
-        color: rgb(170, 170, 170);
-    }
-    &-list__item {
-        list-style: square;
-        margin-top: 20px;
-    }
 }
-
 
 /* Подвал */
 .footer {
@@ -312,7 +318,52 @@ img {
         }
     }
 }
-
+.swiper {
+    &-container {
+        &-m, &-g {           
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+            list-style: none;
+            padding: 0;
+            z-index: 1;
+        }
+        &-m {
+            height: 600px;
+        }
+        &-g {
+            // height: 500px;
+        }
+    }
+    &-slide {
+        .movie {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &-title {
+                font-size: 50px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+    &-pagination {
+        &-bullet-active {
+            background: $main-color;
+        }
+        &-progressbar &-progressbar-fill {
+            background: $main-color;
+            bottom: 0;
+        }
+    }
+    &-button-next, &-button-prev {
+        color: $main-color;
+    }
+}
 /* Прелоадер */
 .preloader {
     position: fixed;

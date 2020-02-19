@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (bgTheme.classList.contains('factory-theme-bg')) {
       imgTheme.classList.remove('factory-theme-obj__img');
       imgTheme.classList.add('woods-theme-obj__img');
-      imgTheme.setAttribute('src', "img/branch.png");
+      imgTheme.setAttribute('src', "img/theme/branch.png");
 
       bgTheme.classList.remove('factory-theme-bg');
       bgTheme.classList.add('woods-theme-bg');
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       imgTheme.classList.remove('woods-theme-obj__img');
       imgTheme.classList.add('factory-theme-obj__img');
-      imgTheme.setAttribute('src', "img/lamp.webp");
+      imgTheme.setAttribute('src', "img/theme/lamp.webp");
 
       bgTheme.classList.remove('woods-theme-bg');
       bgTheme.classList.add('factory-theme-bg');
@@ -62,4 +62,30 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // анимация
   new WOW().init();
+  
+  // слайдер 
+  var swiperMovie = new Swiper('.swiper-container-m', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  var swiperGallery = new Swiper('.swiper-container-g', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'progressbar',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 });
