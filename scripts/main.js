@@ -11,31 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
   });
 
-  // изменение темы
-  changeButton.addEventListener('click', () => {
-    if (bgTheme.classList.contains('factory-theme-bg')) {
-      imgTheme.classList.remove('factory-theme-obj__img');
-      imgTheme.classList.add('woods-theme-obj__img');
-      imgTheme.setAttribute('src', "img/theme/branch.png");
-
-      bgTheme.classList.remove('factory-theme-bg');
-      bgTheme.classList.add('woods-theme-bg');
-
-      objTheme.classList.remove('factory-theme-obj');
-      objTheme.classList.add('woods-theme-obj');
-    } else {
-      imgTheme.classList.remove('woods-theme-obj__img');
-      imgTheme.classList.add('factory-theme-obj__img');
-      imgTheme.setAttribute('src', "img/theme/lamp.webp");
-
-      bgTheme.classList.remove('woods-theme-bg');
-      bgTheme.classList.add('factory-theme-bg');
-
-      objTheme.classList.remove('woods-theme-obj');
-      objTheme.classList.add('factory-theme-obj');
-    }
-  });
-
   // прелоадер
   window.addEventListener('load', () => {
     document.body.classList.add('loaded_hiding');
