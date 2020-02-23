@@ -63,4 +63,39 @@ window.addEventListener('DOMContentLoaded', () => {
       prevEl: '.swiper-button-prev',
     },
   });
+
+  // табы
+  const tabs = () => {
+    const tabHeader = document.querySelector('.order-list'),
+      tab = tabHeader.querySelectorAll('.order-list__item'),
+      tabContent = document.querySelectorAll('.order-edition');
+
+    // Контент
+    const toggleTabContent = (index) => {
+      for (let i = 0; i < tabContent.length; i++) {
+        if (index === i) {
+          tab[i].classList.add('active');
+          tabContent[i].classList.remove('d-none');
+        } else {
+          tab[i].classList.remove('active');
+          tabContent[i].classList.add('d-none');
+        }
+      }
+    };
+
+    tabHeader.addEventListener('click', (event) => {
+      let target = event.target;
+      target = target.closest('.order-list__item');
+
+      if (target) {
+        tab.forEach((item, i) => {
+          if (item === target) {
+            toggleTabContent(i);
+          }
+        });
+      }
+    });
+  };
+  tabs();
+
 });
