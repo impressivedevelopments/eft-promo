@@ -25,7 +25,6 @@
             </div>
             <nav class="layer layer-menu" data-speedX="0" data-speedY="0">
                 <div class="attention m-top m-bottom">
-                    <!-- <i class="fas fa-exclamation-circle fa-3x attention-icon"></i> -->
                     <span class="attention-bold">
                         Внимание! Это Бета-версия Escape From Tarkov, предназначена для тестирования.
                     </span>
@@ -363,7 +362,7 @@
                 <h2 class="section-title">Предзаказ</h2>
                 <ul class="order-list m-top">
                     <a href="#">
-                        <li class="order-list__item">Standard Edition</li>
+                        <li class="order-list__item active">Standard Edition</li>
                     </a>
                     <a href="#">
                         <li class="order-list__item">Left Behind Edition</li>
@@ -466,16 +465,21 @@
 
         <section class="section section-rules">
             <div class="container">
-                <span class="">Осуществляя предзаказ, вы автоматически соглашаетесь с
+                <span class="rules-content">Осуществляя предзаказ, вы автоматически соглашаетесь с
                     <a href="https://www.escapefromtarkov.com/legal/rules_of_the_game_ru.html"
-                        class="">
+                        class="rules__link">
                         Правилами Игры.
                     </a>
                 </span>
-                <p class="">Цена не включает в себя дополнительные сборы. В процессе оплаты
-                    окончательная цена будет
-                    представлена вам до оплаты.
+                <p class="rules__price-warning">Цена не включает в себя дополнительные сборы. В процессе оплаты
+                    окончательная цена будет представлена вам до оплаты.
                 </p>
+
+                <ul class="rules-policity">
+                    <a href="#"><li class="rules-policity__item">Лицензионное соглашение</li></a>
+                    <a href="#"><li class="rules-policity__item">Правила игры</li></a>
+                    <a href="#"><li class="rules-policity__item">Политика конфиденциальности</li></a>
+                </ul>
             </div>
         </section>
         <!-- /.rules -->
@@ -486,20 +490,23 @@
         <div class="footer-content">
             <span class="version">0.12.4.2345 Бета версия</span>
             <nav class="footer-navigation">
-                <a href="#"><i class="fas fa-shopping-basket footer-icons"></i>Барахолка</a>
-                <a href="#"><i class="far fa-chart-bar footer-icons"></i>Статистика</a>
-                <a href="#"><i class="fab fa-wikipedia-w footer-icons"></i>WIKI</a>
-                <button id="change-theme"><i class="fas fa-cogs"></i></button>
+                <a href="#"></i>Барахолка</a>
+                <a href="#">Статистика</a>
+                <a href="#">WIKI</a>
+                <button id="change-theme">⚙️</button>
             </nav>
         </div>
     </footer>
 
+    <!-- Прелоадер -->
     <div class="preloader">
         <div class="spiner"></div>
     </div>
 
-    <!-- Иконочные шрифты -->
-    <!-- <script src="https://kit.fontawesome.com/a9b3fdd279.js"></script> -->
+    <!-- Стрелка вверх -->
+    <button class="arrow-up">🔺</button>
+
+
     <!-- JQuery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <!-- fancybox -->

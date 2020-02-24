@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // плавная прокрутка страницы
   const anchors = document.querySelectorAll('a[href*="#"]');
   anchors.forEach((elem) => {
-    elem.addEventListener('click', function (e) {
+    elem.addEventListener('click', e => {
       e.preventDefault();
 
       const blockID = elem.getAttribute('href').substr(1);
@@ -98,4 +98,21 @@ window.addEventListener('DOMContentLoaded', () => {
   };
   tabs();
 
+  // стрелка наверх
+
+  const arrowUp = document.querySelector('.arrow-up');
+  let time;
+
+  const pageOfTop = () => {
+    window.pageYOffset > 0 ? (window.scrollBy(0, -100), time = setTimeout(pageOfTop, 20)) : clearTimeout(time);
+  };
+
+  arrowUp.addEventListener('click', pageOfTop);
+
+  const checkTop = () => {
+    (window.pageYOffset >= 1000) ? arrowUp.style.cssText = `display: block;` : arrowUp.style.cssText = `display: none;`;
+  };
+
+  window.addEventListener('scroll', checkTop);
+  
 });

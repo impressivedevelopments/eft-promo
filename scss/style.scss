@@ -143,6 +143,11 @@ img {
 .m-bottom {
     margin-bottom: 50px;
 }
+.active {
+    color: #000 !important;
+    background-color: $main-color;
+    box-shadow: 0px 0px 15px $main-color;
+}
 
 /* Шапка */
 #scene {
@@ -235,7 +240,7 @@ img {
 }
 
 .section {
-    padding: 50px 0;
+    padding: 35px 0;
     &-title {
         text-align: center;
         font-size: 36px;
@@ -354,8 +359,31 @@ img {
     }
 }
 
+/* Правила */
+.section {
+    &-rules {
+        text-align: center;
+    }
+}
 .rules {
-
+    &__link {
+        text-decoration: underline;
+        &:hover {
+            color: $main-color;
+        }
+    }
+    &-policity {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__item {
+            margin-right: 25px;
+            text-decoration: underline;
+                &:hover {
+                    color: $main-color;
+                }
+        }
+    }
 }
 
 /* Подвал */
@@ -470,6 +498,18 @@ img {
 .loaded .spiner {
     display: none;
 }
+
+/* Стрелка наверх */
+
+.arrow-up {
+    display: none;
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    background-color: transparent;
+}
+
+
 
 /* Анимации */
 
