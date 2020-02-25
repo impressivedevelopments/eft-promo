@@ -1,118 +1,152 @@
 window.addEventListener('DOMContentLoaded', () => {
-  'use strict';
-  let bgTheme = document.querySelector('.factory-theme-bg'),
-    objTheme = document.querySelector('.factory-theme-obj'),
-    imgTheme = document.querySelector('.factory-theme-obj__img');
+    'use strict';
 
-  const changeButton = document.getElementById('change-theme');
-
-  // контекст меню
-  document.body.addEventListener('contextmenu', (event) => {
-    event.preventDefault();
-  });
-
-  // прелоадер
-  window.addEventListener('load', () => {
-    document.body.classList.add('loaded_hiding');
-    window.setTimeout(function () {
-      document.body.classList.add('loaded');
-      document.body.classList.remove('loaded_hiding');
-    }, 500);
-  });
-
-  // плавная прокрутка страницы
-  const anchors = document.querySelectorAll('a[href*="#"]');
-  anchors.forEach((elem) => {
-    elem.addEventListener('click', e => {
-      e.preventDefault();
-
-      const blockID = elem.getAttribute('href').substr(1);
-
-      document.getElementById(blockID).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+    // контекст меню
+    document.body.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
     });
-  });
 
-  // анимация
-  new WOW().init();
-  
-  // слайдер 
-  var swiperMovie = new Swiper('.swiper-container-m', {
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
+    // прелоадер
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded_hiding');
+        window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+        }, 500);
+    });
 
-  var swiperGallery = new Swiper('.swiper-container-g', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      type: 'progressbar',
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
+    // плавная прокрутка страницы
+    const anchors = document.querySelectorAll('a[href*="#"]');
+    anchors.forEach((elem) => {
+        elem.addEventListener('click', e => {
+            e.preventDefault();
 
-  // табы
-  const tabs = () => {
-    const tabHeader = document.querySelector('.order-list'),
-      tab = tabHeader.querySelectorAll('.order-list__item'),
-      tabContent = document.querySelectorAll('.order-edition');
+            const blockID = elem.getAttribute('href').substr(1);
 
-    // Контент
-    const toggleTabContent = (index) => {
-      for (let i = 0; i < tabContent.length; i++) {
-        if (index === i) {
-          tab[i].classList.add('active');
-          tabContent[i].classList.remove('d-none');
-        } else {
-          tab[i].classList.remove('active');
-          tabContent[i].classList.add('d-none');
-        }
-      }
+            document.getElementById(blockID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+
+    // анимация
+    new WOW().init();
+
+    // слайдер 
+    var swiperMovie = new Swiper('.swiper-container-m', {
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    var swiperGallery = new Swiper('.swiper-container-g', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: 'progressbar',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    // табы
+    const tabs = () => {
+        const tabHeader = document.querySelector('.order-list'),
+            tab = tabHeader.querySelectorAll('.order-list__item'),
+            tabContent = document.querySelectorAll('.order-edition');
+
+        // Контент
+        const toggleTabContent = (index) => {
+            for (let i = 0; i < tabContent.length; i++) {
+                if (index === i) {
+                    tab[i].classList.add('active');
+                    tabContent[i].classList.remove('d-none');
+                } else {
+                    tab[i].classList.remove('active');
+                    tabContent[i].classList.add('d-none');
+                }
+            }
+        };
+
+        tabHeader.addEventListener('click', (event) => {
+            let target = event.target;
+            target = target.closest('.order-list__item');
+
+            if (target) {
+                tab.forEach((item, i) => {
+                    if (item === target) {
+                        toggleTabContent(i);
+                    }
+                });
+            }
+        });
+    };
+    tabs();
+
+    // стрелка наверх
+    const arrowUp = document.querySelector('.arrow-up');
+    let time;
+
+    const pageOfTop = () => {
+        window.pageYOffset > 0 ? (window.scrollBy(0, -100), time = setTimeout(pageOfTop, 20)) : clearTimeout(time);
     };
 
-    tabHeader.addEventListener('click', (event) => {
-      let target = event.target;
-      target = target.closest('.order-list__item');
+    arrowUp.addEventListener('click', pageOfTop);
 
-      if (target) {
-        tab.forEach((item, i) => {
-          if (item === target) {
-            toggleTabContent(i);
-          }
+    const checkTop = () => {
+        (window.pageYOffset >= 1000) ? arrowUp.style.cssText = `display: block;`: arrowUp.style.cssText = `display: none;`;
+    };
+
+    window.addEventListener('scroll', checkTop);
+
+    // выпадающий список
+    const equipmentListItems = document.querySelectorAll('.equipment-list__item'),
+        increaseBtn = document.getElementById('increase-btn'),
+        decreaseBtn = document.getElementById('decrease-btn'),
+        equipment = document.querySelector('.equipment');
+
+    increaseBtn.addEventListener('click', () => {
+
+        equipmentListItems.forEach(function(item, i) {
+            setTimeout(() => {
+                item.style.display = 'block';
+            }, 20*i);
         });
-      }
+        decreaseBtn.style.display = 'block';
+
+        // Типо кроссбраузерность)
+        // for (let i = 0; i < equipmentListItems.length; i++) {
+        //     setTimeout(() => {
+        //         equipmentListItems[i].style.display = 'block';
+        //     }, 20*i);
+        // }
     });
-  };
-  tabs();
 
-  // стрелка наверх
+    decreaseBtn.addEventListener('click', () => {
 
-  const arrowUp = document.querySelector('.arrow-up');
-  let time;
+        equipmentListItems.forEach(function(item, i) {
+            setTimeout(() => {
+                item.style.display = 'none';
+            }, 20*i);
+        });
+        decreaseBtn.style.display = 'none';
 
-  const pageOfTop = () => {
-    window.pageYOffset > 0 ? (window.scrollBy(0, -100), time = setTimeout(pageOfTop, 20)) : clearTimeout(time);
-  };
+        // Типо кроссбраузерность)
+        // for (let i = 0; i < equipmentListItems.length; i++) {
+        //     setTimeout(() => {
+        //         equipmentListItems[i].style.display = 'none';
+        //     }, 20*i);
+        // }
+    });
 
-  arrowUp.addEventListener('click', pageOfTop);
-
-  const checkTop = () => {
-    (window.pageYOffset >= 1000) ? arrowUp.style.cssText = `display: block;` : arrowUp.style.cssText = `display: none;`;
-  };
-
-  window.addEventListener('scroll', checkTop);
-  
 });

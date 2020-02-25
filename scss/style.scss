@@ -1,5 +1,4 @@
 /* Шрифты */
-
 @font-face {
     font-family: 'Bender';
     src: url('../fonts/Bender.eot');
@@ -10,7 +9,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Bender';
     src: url('../fonts/Bender-Bold.eot');
@@ -61,10 +59,12 @@
 }
 
 $main-color: #9a8866;
-$attention-color: rgba(228, 89, 3, 0.8);
+$font-color: #aaaaaa;
+$success-color: #2abe2a;
+$warning-color: #cc1b1b;
+$attention-color: #e45903cc;
 
 /* Базовые настройки */
-
 * {
     box-sizing: border-box;
 }
@@ -99,16 +99,15 @@ a {
     text-decoration: none;
 }
 
+/* Заголовки */
 h1, h2, h3 {
     color: $main-color;
     margin: 0;
 }
-
 h2 {
     font-size: 36px;
     text-transform: uppercase;
 }
-
 h3 {
     margin: 50px 0 10px 0;
     font-size: 24px;
@@ -116,7 +115,7 @@ h3 {
 
 button {
     outline: none;
-    border: none;
+    border: 1px solid transparent;
     cursor: pointer;
 }
 
@@ -143,10 +142,10 @@ img {
 .m-bottom {
     margin-bottom: 50px;
 }
+
 .active {
     color: #000 !important;
     background-color: $main-color;
-    box-shadow: 0px 0px 15px $main-color;
 }
 
 /* Шапка */
@@ -191,7 +190,7 @@ img {
                     padding: 0 20px;
                     border: 1px solid transparent;
                     border-radius: 3px;
-                    transition: .3s ease;
+                    transition: .5s ease;
                     &:hover {
                         background: #fff url("../img/hover.png");
                         background-size: cover;
@@ -273,7 +272,7 @@ img {
         padding: 0;
         font-family: 'Neusa';
         font-size: 20px;
-        color: rgb(170, 170, 170);
+        color: $font-color;
     }
     &-list__item {
         list-style: square;
@@ -293,7 +292,7 @@ img {
             font-weight: bold;
             border: 1px soild transparent;
             border-radius: 2px;
-            transition: .3s ease;
+            transition: .5s ease;
             &:hover {
                 background-color: $main-color;
                 color: #000;
@@ -334,7 +333,7 @@ img {
         &__item {
             list-style: square;
             padding: 15px 0px;
-            color: rgb(170, 170, 170);
+            color: $font-color;
             font-size: 20px;
             font-family: 'Neusa', serif;
         }
@@ -347,27 +346,72 @@ img {
             margin-right: 30px;
             display: block;
             font-size: 55px;
-            color: #AFAC9D;
+            color: #fff;
         }
         &__button {
-            background-color: $main-color;
-            padding: 16px 19px;
+            background: $main-color;
+            padding: 15px 20px;
             color: #000;
+            border: 2px solid $main-color;
+            border-radius: 5px;
             font-size: 22px;
             text-transform: uppercase;
+            transition: .5s ease;
+            &:hover {
+                background-color: transparent;
+                color: $main-color;
+                border: 2px solid $main-color;
+            }
+            &:active {
+                background: url("../img/hover.png");
+                background-size: cover;
+                color: $font-color;
+                border: 2px solid $font-color;
+            }
         }
     }
 }
 
+.equipment { 
+    color: $main-color;
+    position: relative;
+    &-list {
+        color: $font-color;
+        padding: 0 0 10px 20px;
+        &__item {
+            display: none;
+            transition: .5s ease;
+        }
+    }
+    #increase-btn {
+        cursor: pointer;
+    } 
+    #decrease-btn {
+        display: none;
+        background-color: #00000090;
+        color: $font-color;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+
 /* Правила */
 .section {
     &-rules {
+        color: $font-color;
         text-align: center;
     }
 }
 .rules {
     &__link {
+        color: #fff;
         text-decoration: underline;
+        transition: .5s ease;
         &:hover {
             color: $main-color;
         }
@@ -378,7 +422,9 @@ img {
         justify-content: center;
         &__item {
             margin-right: 25px;
+            color: #fff;
             text-decoration: underline;
+            transition: .5s ease;
                 &:hover {
                     color: $main-color;
                 }
@@ -409,7 +455,7 @@ img {
             padding: 5px 10px;
             display: block;
             text-transform: uppercase;
-            transition: .3s ease;
+            transition: .5s ease;
                 &:hover {
                     background: #fff url("../img/hover.png");
                     color: #000;
@@ -417,6 +463,8 @@ img {
         }
     }
 }
+
+/* Слайдер */
 .swiper {
     &-container {
         &-m, &-g {           
@@ -464,6 +512,7 @@ img {
         color: $main-color;
     }
 }
+
 /* Прелоадер */
 .preloader {
     position: fixed;
@@ -488,19 +537,16 @@ img {
     animation: spin 500ms infinite linear;
     z-index: 999998;
 }
-
 .loaded_hiding .preloader {
-    transition: 0.3s opacity;
+    transition: 0.5s opacity;
     opacity: 0;
 }
-
 .loaded .preloader,
 .loaded .spiner {
     display: none;
 }
 
 /* Стрелка наверх */
-
 .arrow-up {
     display: none;
     position: fixed;
@@ -508,8 +554,6 @@ img {
     right: 5%;
     background-color: transparent;
 }
-
-
 
 /* Анимации */
 
