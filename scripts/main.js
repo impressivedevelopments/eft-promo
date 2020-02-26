@@ -64,13 +64,14 @@ window.addEventListener('DOMContentLoaded', () => {
         const tabHeader = document.querySelector('.order-list'),
             tab = tabHeader.querySelectorAll('.order-list__item'),
             tabContent = document.querySelectorAll('.order-edition');
-
+        
         // Контент
         const toggleTabContent = (index) => {
             for (let i = 0; i < tabContent.length; i++) {
                 if (index === i) {
                     tab[i].classList.add('active');
                     tabContent[i].classList.remove('d-none');
+
                 } else {
                     tab[i].classList.remove('active');
                     tabContent[i].classList.add('d-none');
@@ -111,65 +112,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
     
     // выпадающий список
+    // const edition = document.querySelectorAll('.order-edition');
     const equipmentListItems = document.querySelectorAll('.equipment-list__item'),
         decreaseBtn = document.getElementById('decrease-btn'),
         equipment = document.querySelector('.equipment');
 
-    let isListOpen = false;
     equipment.addEventListener('click', event => {
-      const target = event.target;
-        if (target.matches('#increase-btn') && isListOpen) {
-            isListOpen = false;
+        const target = event.target;
+        if (target.matches('#increase-btn')) {
             equipmentListItems.forEach((item, i) => {
                 setTimeout(() => {
                     item.style.display = 'block';
                 }, 20 * i);
             });
             decreaseBtn.style.display = 'block';
-        } else if (target.matches('#increase-btn') && !isListOpen) {
-            isListOpen = true;
+        }
+
+        if (target.matches('#decrease-btn')) {
             equipmentListItems.forEach((item, i) => {
                 setTimeout(() => {
                     item.style.display = 'none';
                 }, 20 * i);
             });
             decreaseBtn.style.display = 'none';
-        }
-    });
-
-
-    // increaseBtn.addEventListener('click', () => {
-
-    //     equipmentListItems.forEach((item, i) => {
-    //         setTimeout(() => {
-    //             item.style.display = 'block';
-    //         }, 20 * i);
-    //     });
-    //     decreaseBtn.style.display = 'block';
-
-    //     // Типо кроссбраузерность)
-    //     // for (let i = 0; i < equipmentListItems.length; i++) {
-    //     //     setTimeout(() => {
-    //     //         equipmentListItems[i].style.display = 'block';
-    //     //     }, 20*i);
-    //     // }
-    // });
-
-    // decreaseBtn.addEventListener('click', () => {
-
-    //     equipmentListItems.forEach((item, i) => {
-    //         setTimeout(() => {
-    //             item.style.display = 'none';
-    //         }, 20 * i);
-    //     });
-    //     decreaseBtn.style.display = 'none';
-
-    //     // Типо кроссбраузерность)
-    //     // for (let i = 0; i < equipmentListItems.length; i++) {
-    //     //     setTimeout(() => {
-    //     //         equipmentListItems[i].style.display = 'none';
-    //     //     }, 20*i);
-    //     // }
-    // });
-  
+        }      
+    });  
 });

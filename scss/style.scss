@@ -287,7 +287,7 @@ img {
         display: flex;
         justify-content: space-between;
         &__item {
-            padding: 0px 10px;
+            padding: 5px 10px;
             color: $main-color;
             font-weight: bold;
             border: 1px soild transparent;
@@ -374,10 +374,11 @@ img {
 
 .equipment { 
     color: $main-color;
-    position: relative;
     &-list {
+        list-style: circle;
         color: $font-color;
-        padding: 0 0 10px 20px;
+        // padding: 10px 0 10px 20px;
+        position: relative;
         &__item {
             display: none;
             transition: .5s ease;
@@ -393,7 +394,7 @@ img {
         position: absolute;
         right: 0;
         left: 0;
-        bottom: 0;
+        bottom: -15px;
         text-align: center;
         cursor: pointer;
     }
