@@ -71,7 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (index === i) {
                     tab[i].classList.add('active');
                     tabContent[i].classList.remove('d-none');
-
+                    dropList();
                 } else {
                     tab[i].classList.remove('active');
                     tabContent[i].classList.add('d-none');
@@ -112,29 +112,40 @@ window.addEventListener('DOMContentLoaded', () => {
 
     
     // выпадающий список
-    // const edition = document.querySelectorAll('.order-edition');
-    const equipmentListItems = document.querySelectorAll('.equipment-list__item'),
-        decreaseBtn = document.getElementById('decrease-btn'),
-        equipment = document.querySelector('.equipment');
 
-    equipment.addEventListener('click', event => {
-        const target = event.target;
-        if (target.matches('#increase-btn')) {
-            equipmentListItems.forEach((item, i) => {
-                setTimeout(() => {
-                    item.style.display = 'block';
-                }, 20 * i);
-            });
-            decreaseBtn.style.display = 'block';
-        }
+    const dropList = () => {
+        const editions = document.querySelectorAll('.order-edition');
 
-        if (target.matches('#decrease-btn')) {
-            equipmentListItems.forEach((item, i) => {
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 20 * i);
-            });
-            decreaseBtn.style.display = 'none';
-        }      
-    });  
+        editions.forEach((edition) => {
+            if (!edition.classList.contains('d-none')) {            
+                let equipmentListItems = edition.querySelectorAll('.equipment-list__item'),
+                    decreaseBtn = edition.querySelector('#decrease-btn'),
+                    equipment = edition.querySelector('.equipment');
+
+                console.log(equipment);
+
+                equipment.addEventListener('click', event => {
+                    const target = event.target;
+                    if (target.matches('#increase-btn')) {
+                        equipmentListItems.forEach((item, i) => {
+                            setTimeout(() => {
+                                item.style.display = 'block';
+                            }, 20 * i);
+                        });
+                        decreaseBtn.style.display = 'block';
+                    }
+
+                    if (target.matches('#decrease-btn')) {
+                        equipmentListItems.forEach((item, i) => {
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 20 * i);
+                        });
+                        decreaseBtn.style.display = 'none';
+                    }      
+                }); 
+            }
+        });    
+    };
+    
 });
