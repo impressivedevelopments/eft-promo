@@ -109,44 +109,67 @@ window.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', checkTop);
 
+    
     // выпадающий список
     const equipmentListItems = document.querySelectorAll('.equipment-list__item'),
-        increaseBtn = document.getElementById('increase-btn'),
         decreaseBtn = document.getElementById('decrease-btn'),
         equipment = document.querySelector('.equipment');
 
-    increaseBtn.addEventListener('click', () => {
-
-        equipmentListItems.forEach(function(item, i) {
-            setTimeout(() => {
-                item.style.display = 'block';
-            }, 20*i);
+    equipment.addEventListener('click', event => {
+      const target = event.target;
+      if (target.matches('#increase-btn')) {
+        equipmentListItems.forEach((item, i) => {
+          setTimeout(() => {
+              item.style.display = 'block';
+          }, 20 * i);
         });
         decreaseBtn.style.display = 'block';
+      }
 
-        // Типо кроссбраузерность)
-        // for (let i = 0; i < equipmentListItems.length; i++) {
-        //     setTimeout(() => {
-        //         equipmentListItems[i].style.display = 'block';
-        //     }, 20*i);
-        // }
-    });
-
-    decreaseBtn.addEventListener('click', () => {
-
-        equipmentListItems.forEach(function(item, i) {
-            setTimeout(() => {
-                item.style.display = 'none';
-            }, 20*i);
+      if (target.matches('#decrease-btn')) {
+        equipmentListItems.forEach((item, i) => {
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 20 * i);
         });
         decreaseBtn.style.display = 'none';
-
-        // Типо кроссбраузерность)
-        // for (let i = 0; i < equipmentListItems.length; i++) {
-        //     setTimeout(() => {
-        //         equipmentListItems[i].style.display = 'none';
-        //     }, 20*i);
-        // }
+      }
+      
     });
 
+
+    // increaseBtn.addEventListener('click', () => {
+
+    //     equipmentListItems.forEach((item, i) => {
+    //         setTimeout(() => {
+    //             item.style.display = 'block';
+    //         }, 20 * i);
+    //     });
+    //     decreaseBtn.style.display = 'block';
+
+    //     // Типо кроссбраузерность)
+    //     // for (let i = 0; i < equipmentListItems.length; i++) {
+    //     //     setTimeout(() => {
+    //     //         equipmentListItems[i].style.display = 'block';
+    //     //     }, 20*i);
+    //     // }
+    // });
+
+    // decreaseBtn.addEventListener('click', () => {
+
+    //     equipmentListItems.forEach((item, i) => {
+    //         setTimeout(() => {
+    //             item.style.display = 'none';
+    //         }, 20 * i);
+    //     });
+    //     decreaseBtn.style.display = 'none';
+
+    //     // Типо кроссбраузерность)
+    //     // for (let i = 0; i < equipmentListItems.length; i++) {
+    //     //     setTimeout(() => {
+    //     //         equipmentListItems[i].style.display = 'none';
+    //     //     }, 20*i);
+    //     // }
+    // });
+  
 });
