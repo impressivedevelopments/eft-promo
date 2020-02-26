@@ -134,6 +134,9 @@ img {
 .d-none {
     display: none !important;
 }
+.d-block {
+    display: block;
+}
 
 .m-top {
     margin-top: 50px;
@@ -330,6 +333,9 @@ img {
                 display: block;
             }
         }
+        &-list {
+            width: 500px;
+        }
         &__item {
             list-style: square;
             padding: 15px 0px;
@@ -362,12 +368,6 @@ img {
                 color: $main-color;
                 border: 2px solid $main-color;
             }
-            &:active {
-                background: url("../img/hover.png");
-                background-size: cover;
-                color: $font-color;
-                border: 2px solid $font-color;
-            }
         }
     }
 }
@@ -375,30 +375,21 @@ img {
 .equipment { 
     color: $main-color;
     &-list {
-        list-style: circle;
+        height: 0;
+        overflow: hidden;
         color: $font-color;
-        // padding: 10px 0 10px 20px;
+        padding-left: 20px;
         position: relative;
+        transition: .5s ease;
         &__item {
-            display: none;
-            transition: .5s ease;
+            list-style: circle;
         }
     }
-    #increase-btn {
-        cursor: pointer;
-    } 
-    #decrease-btn {
-        display: none;
-        background-color: #00000090;
-        color: $font-color;
-        position: absolute;
-        right: 0;
-        left: 0;
-        bottom: -15px;
-        text-align: center;
+    .increase-btn, .decrease-btn {
         cursor: pointer;
     }
 }
+
 
 
 /* Правила */

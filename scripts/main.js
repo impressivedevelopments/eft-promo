@@ -71,7 +71,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (index === i) {
                     tab[i].classList.add('active');
                     tabContent[i].classList.remove('d-none');
-                    dropList();
                 } else {
                     tab[i].classList.remove('active');
                     tabContent[i].classList.add('d-none');
@@ -112,40 +111,35 @@ window.addEventListener('DOMContentLoaded', () => {
 
     
     // выпадающий список
+    const orderEditionList = document.querySelector('.section-order');
 
-    const dropList = () => {
-        const editions = document.querySelectorAll('.order-edition');
+    const accordeon = (target) => {
+        const items = target.querySelectorAll('li'),
+            equipmentList = target.querySelector('ul');
 
-        editions.forEach((edition) => {
-            if (!edition.classList.contains('d-none')) {            
-                let equipmentListItems = edition.querySelectorAll('.equipment-list__item'),
-                    decreaseBtn = edition.querySelector('#decrease-btn'),
-                    equipment = edition.querySelector('.equipment');
+        let equipmentListHeight = 0,
+            equipmentListItemHeight = 24,
+            actionBtn = target.childNodes[1];
+                    
+            equipmentList.style.height = equipmentListHeight + 'px';
 
-                console.log(equipment);
-
-                equipment.addEventListener('click', event => {
-                    const target = event.target;
-                    if (target.matches('#increase-btn')) {
-                        equipmentListItems.forEach((item, i) => {
-                            setTimeout(() => {
-                                item.style.display = 'block';
-                            }, 20 * i);
-                        });
-                        decreaseBtn.style.display = 'block';
-                    }
-
-                    if (target.matches('#decrease-btn')) {
-                        equipmentListItems.forEach((item, i) => {
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 20 * i);
-                        });
-                        decreaseBtn.style.display = 'none';
-                    }      
-                }); 
-            }
-        });    
+        if (actionBtn.classList.contains('increase-btn')) {
+            items.forEach((item, i) => {
+                equipmentList.style.height = equipmentListItemHeight*(i + 1) + 'px';
+                actionBtn.classList.remove('increase-btn');
+                actionBtn.classList.add('decrease-btn');
+            });
+        } else {
+            equipmentList.style.height = equipmentListHeight + 'px';
+            actionBtn.classList.remove('decrease-btn');
+            actionBtn.classList.add('increase-btn');  
+        }
     };
-    
+
+    orderEditionList.addEventListener('click', e => {
+        const target = e.target.closest('.equipment');
+        if (target) {
+            accordeon(target);
+        }
+    });
 });
