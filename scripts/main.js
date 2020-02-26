@@ -115,26 +115,26 @@ window.addEventListener('DOMContentLoaded', () => {
         decreaseBtn = document.getElementById('decrease-btn'),
         equipment = document.querySelector('.equipment');
 
+    let isListOpen = false;
     equipment.addEventListener('click', event => {
       const target = event.target;
-      if (target.matches('#increase-btn')) {
-        equipmentListItems.forEach((item, i) => {
-          setTimeout(() => {
-              item.style.display = 'block';
-          }, 20 * i);
-        });
-        decreaseBtn.style.display = 'block';
-      }
-
-      if (target.matches('#decrease-btn')) {
-        equipmentListItems.forEach((item, i) => {
-          setTimeout(() => {
-            item.style.display = 'none';
-          }, 20 * i);
-        });
-        decreaseBtn.style.display = 'none';
-      }
-      
+        if (target.matches('#increase-btn') && isListOpen) {
+            isListOpen = false;
+            equipmentListItems.forEach((item, i) => {
+                setTimeout(() => {
+                    item.style.display = 'block';
+                }, 20 * i);
+            });
+            decreaseBtn.style.display = 'block';
+        } else if (target.matches('#increase-btn') && !isListOpen) {
+            isListOpen = true;
+            equipmentListItems.forEach((item, i) => {
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 20 * i);
+            });
+            decreaseBtn.style.display = 'none';
+        }
     });
 
 
