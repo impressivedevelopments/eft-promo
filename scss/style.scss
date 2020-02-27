@@ -1,154 +1,42 @@
 /* Шрифты */
-@font-face {
-    font-family: 'Bender';
-    src: url('../fonts/Bender.eot');
-    src: local('../fonts/Bender'),
-        url('../fonts/Bender.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Bender.woff') format('woff'),
-        url('../fonts/Bender.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Bender';
-    src: url('../fonts/Bender-Bold.eot');
-    src: local('../fonts/Bender Bold'), local('Bender-Bold'),
-        url('../fonts/Bender-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Bender-Bold.woff') format('woff'),
-        url('../fonts/Bender-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Neusa';
-    src: url('../fonts/Neusa-DemiBold.eot');
-    src: local('../fonts/Neusa-DemiBold'),
-        url('../fonts/Neusa-DemiBold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Neusa-DemiBold.woff') format('woff'),
-        url('../fonts/Neusa-DemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
+@import 'modules/font';
 
-/* Темы и цвета */
-#change-theme {
+/* Цвета */
+@import 'modules/colors';
+
+/* Базовые настройки */
+@import 'modules/basis';
+
+/* Тема */
+#settings {
     background-color: transparent;
     color: #ffffff;
     margin-left: 5px;
     background-color: #ffffff10;
     padding: 5px 10px;
-        &:hover {
-            background: #fff url("../img/hover.png");
-            color: #000;
-        }
+
+    &:hover {
+        background: #fff url("../img/hover.png");
+        color: #000;
+    }
 }
+
 .factory-theme {
     &-bg {
         background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/theme/factory-theme-bg.webp") center no-repeat;
         background-size: cover;
     }
+
     &-obj {
         top: -15%;
         left: 0;
         right: -30%;
         bottom: 0;
+
         &__img {
             animation: swang 5s ease-in-out infinite;
         }
     }
-}
-
-$main-color: #9a8866;
-$font-color: #aaaaaa;
-$success-color: #2abe2a;
-$warning-color: #cc1b1b;
-$attention-color: #e45903cc;
-
-/* Базовые настройки */
-* {
-    box-sizing: border-box;
-}
-
-body {
-    cursor: url("../img/cursor.cur") 2 2, pointer;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    font-family: 'Bender', sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-a {
-    display: inline-block;
-    color: inherit;
-    text-decoration: none;
-}
-
-/* Заголовки */
-h1, h2, h3 {
-    color: $main-color;
-    margin: 0;
-}
-h2 {
-    font-size: 36px;
-    text-transform: uppercase;
-}
-h3 {
-    margin: 50px 0 10px 0;
-    font-size: 24px;
-}
-
-button {
-    outline: none;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-
-img {
-    width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-}
-
-.container {
-    width: 90%;
-    max-width: 1240px;
-    margin: auto;
-}
-
-.d-none {
-    display: none !important;
-}
-.d-block {
-    display: block;
-}
-
-.m-top {
-    margin-top: 50px;
-}
-
-.m-bottom {
-    margin-bottom: 50px;
-}
-
-.active {
-    color: #000 !important;
-    background-color: $main-color;
 }
 
 /* Шапка */

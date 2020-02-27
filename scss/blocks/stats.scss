@@ -1,0 +1,60 @@
+
+/* Шрифты */
+@import '../modules/font';
+
+/* Цвета */
+@import '../modules/colors';
+
+/* Базовые настройки */
+@import '../modules/basis';
+
+.header {
+  background-color: rgba(0, 0, 0, 0.97);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 20px;
+  &-logo {
+    width: 150px;
+  }
+}
+.menu {
+  &-list {
+    &__item {
+      padding: 5px 10px;
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+.news {
+  background-image: url('../../img/stats/news-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  &-line-block {
+    background-color: $font-color;
+    width: 100%;
+    &__item {
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      animation: marquee 20s infinite linear;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(200%)
+  }
+}
