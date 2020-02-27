@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape From Tarkov - статистика</title>
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/Chart.min.css">
     <link rel="stylesheet" href="../css/style.min.css">
     <link rel="stylesheet" href="../css/stats.min.css">
 </head>
+
 <body>
+
     <header class="header">
-        <a href="../index.html"><img src="../img/logo.webp" class="header-logo" alt="logo"></a>
+        <a href="../index.html" class="header-logo">
+            Batllestate Games
+            <!-- <img src="../img/bs_logo.webp" class="header-logo" alt="logo"> -->
+        </a>
         <nav class="menu">
             <ul class="menu-list">
                 <a href="../index.html">
@@ -32,11 +39,45 @@
     <main class="hero">
         <div class="news">
             <div class="news-line-block">
-                <span class="news-line-block__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim veritatis
-                    accusamus veniam eum, ex tempora assumenda neque est? Nisi, similique.</span>
+                <span class="news-line-block__item">
+                    Важные новости. Сегодня на территории города Тарков
+                    погибло более 3000 человек, мирных жителей среди пострадавших к счастью нет.
+                    Группы частной военной компании BEAR всеми методами стараются подавить восстание 
+                    протестантов.
+                </span>
             </div>
         </div>
         <!-- /.news -->
+
+        <section class="section stats">
+            <h2 class="section-title">Статистика</h2>
+            <div class="container">
+                <div class="charts">
+                    <div class="chart-small">
+                        <h3 class="chart-title">Популярность локаций</h3>
+                        <span class="chart-description">
+                            Отношение количества сессий к локации за деньи в среднем за месяц.
+                        </span>
+                        <canvas id="radarChart" width="500" height="500"></canvas>                
+                    </div>
+                    <div class="chart-small">
+                        <h3 class="chart-title">Успешность рейдов</h3>
+                        <span class="chart-description">
+                            Процентное соотношение выживаний и смертей.
+                        </span>
+                        <canvas id="pieChart" width="500" height="500"></canvas>
+                    </div>
+                    <div class="chart-large">
+                        <h3 class="chart-title">Подсчет убитых ЧВК</h3>
+                        <span class="chart-description">
+                            Мясячное количество убитых ЧВК определенной фракции.
+                        </span>
+                        <canvas id="lineChart" width="1240" height="500"></canvas>
+                    </div>
+                </div>                
+            </div>
+        </section>
+        <!-- /.section-stats -->
     </main>
     <!-- /.hero -->
 
@@ -52,5 +93,11 @@
         </div>
     </footer>
     <!-- /.footer -->
+
+    <script src="../scripts/plugins/Chart.min.js"></script>
+    <script src="../scripts/main.js">
+        
+    </script>
+
 </body>
 </html>

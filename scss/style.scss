@@ -124,7 +124,8 @@
 }
 
 .hero {    
-    background: #000 url('../img/about/bg.jpg') center no-repeat;
+    background: #000; 
+    // url('../img/about/bg.jpg') center no-repeat;
     background-position: top;
     background-size: contain;
 }
@@ -153,7 +154,9 @@
                 width: 100%;
             }
         }
-        
+        &-title {
+            margin: 50px 0 10px 0;
+        }
     }
     &-description {
         width: 800px;
@@ -278,16 +281,10 @@
     }
 }
 
-
-
 /* Правила */
-.section {
-    &-rules {
-        color: $font-color;
-        text-align: center;
-    }
-}
 .rules {
+    color: $font-color;
+    text-align: center;
     &__link {
         color: #fff;
         text-decoration: underline;

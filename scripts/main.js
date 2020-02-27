@@ -111,7 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     
     // выпадающий список
-    const orderEditionList = document.querySelector('.section-order');
+    const orderEditionList = document.querySelector('.order');
 
     const accordeon = (target) => {
         const items = target.querySelectorAll('li'),
@@ -142,4 +142,141 @@ window.addEventListener('DOMContentLoaded', () => {
             accordeon(target);
         }
     });
+});
+
+// графики
+
+const ctxRadar = document.getElementById('radarChart').getContext('2d');
+const radarChart = new Chart(ctxRadar, {
+    type: 'radar',
+    data: {
+        labels: ['Завод', 'Берег', 'Развязка', 'Таможня', 'Лес', 'Резерв', 'Лаборатория', 'Улицы Таркова'],
+        datasets: [{
+            label: 'Количество сессий за день',
+            data: [54, 37, 46, 82, 34, 79, 50, 80],
+            pointBacgroundColor: '#9a8866',
+            backgroundColor: '#9a886650',
+            borderColor: '#9a8866',
+        }, 
+        {
+            label: 'Количество сессий в среднем за месяц',
+            data: [60, 74, 42, 86, 52, 52, 55, 102],
+            pointBacgroundColor: '#aaaaaa',
+            backgroundColor: '#aaaaaa50',
+            borderColor: '#aaaaaa'},
+        ]
+    },
+    options: {        
+        legend: {
+            labels: {
+                fontColor: '#aaaaaa',
+                fontFamily: 'Bender'
+            }
+        },
+        scale: {
+            angleLines: {
+                display: true,
+                color: '#ffffff25'
+            },
+            gridLines: {
+                display: true,
+                color: '#ffffff25'
+            },
+            ticks: {                
+                backdropColor: 'transparent',           
+                fontColor: '#aaaaaa',
+                fontFamily: 'Bender'
+            }
+        }
+    },
+});
+
+const ctxPie = document.getElementById('pieChart').getContext('2d');
+const pieChart = new Chart(ctxPie, {
+    type: 'doughnut',
+    data: {
+        labels: ['Выживаний', 'Смертей'],
+        datasets: [{
+            data: [62, 38, 0, 0],
+            borderWidth: 3,
+            borderColor: [
+                '#aaaaaa',
+                '#9a8866',
+                '#9a8866',
+                '#aaaaaa',
+            ],
+            backgroundColor: [
+                '#aaaaaa50',
+                '#9a886650',
+                '#9a886650',
+                '#aaaaaa50',
+            ],
+        },]
+    },
+    
+    options: {
+        cutoutPercentage: 25,        
+        legend: {
+            labels: {
+                fontColor: '#aaaaaa',
+                fontFamily: 'Bender'
+            }
+        },
+    },
+});
+
+const ctxLine = document.getElementById('lineChart').getContext('2d');
+const lineChart = new Chart(ctxLine, {
+    type: 'line',
+    data: {
+        labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        datasets: [{
+            label: 'Убито USEC',
+            data: [1824, 4231, 965, 521, 2452, 8566, 1200, 7620, 2752, 6578, 6211, 2227],
+            backgroundColor: '#9a886650',
+            borderColor: '#9a8866',
+        },
+        {
+            label: 'Убито BEAR',
+            data: [6454, 2431, 7565, 4201, 9452, 5560, 2400, 6080, 4562, 1448, 6751, 1177], 
+            backgroundColor: '#aaaaaa50',
+            borderColor: '#aaaaaa',
+        }],
+    },
+    options: { 
+        legend: {
+            labels: {
+                fontColor: '#aaaaaa',
+                fontFamily: 'Bender'
+            }
+        },
+        scales: {            
+          xAxes: [{
+            display: true,
+            gridLines: {
+              display: true,
+              color: '#ffffff25',
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Месяц',              
+              fontColor: '#aaaaaa',
+              fontFamily: 'Bender'
+            },
+          }],
+          yAxes: [{
+            display: true,
+            gridLines: {
+              display: true,
+              color: '#ffffff25',
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Убийства',        
+              fontColor: '#aaaaaa',
+              fontFamily: 'Bender'
+            }
+          }]
+        }
+    },
 });
