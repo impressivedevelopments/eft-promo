@@ -146,6 +146,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // графики
 
+// radarChart
 const ctxRadar = document.getElementById('radarChart').getContext('2d');
 const radarChart = new Chart(ctxRadar, {
     type: 'radar',
@@ -191,23 +192,78 @@ const radarChart = new Chart(ctxRadar, {
     },
 });
 
+// barChart
+const ctxBar = document.getElementById('barChart').getContext('2d');
+const barChart = new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+        labels: ['ЧВК'],
+        datasets: [{
+            label: 'BEAR',
+            data: [53],
+            borderWidth: 3,
+            minBarLength: 6,
+            borderColor: ['#9a8866'],
+            backgroundColor: ['#9a886650'],
+        },
+        {
+            label: 'USEC',
+            data: [44],
+            borderWidth: 3,
+            minBarLength: 6,
+            borderColor: ['#aaaaaa'],
+            backgroundColor: ['#aaaaaa50'],
+        },
+        {
+            label: 'SCAV',
+            data: [3],
+            borderWidth: 3,
+            minBarLength: 6,
+            borderColor: ['#aaaaaa'],
+            backgroundColor: ['transparent'],
+        }
+    ]
+    },
+    options: { 
+        legend: {
+            labels: {
+                fontColor: '#aaaaaa',
+                fontFamily: 'Bender'
+            }
+        },
+        scales: {            
+          xAxes: [{
+            display: true,
+            gridLines: {
+              display: true,
+              color: '#ffffff25',
+            },
+          }],
+          yAxes: [{
+            display: true,
+            gridLines: {
+              display: true,
+              color: '#ffffff25',
+            },
+          }]
+        }
+    },
+});
+
+// pieChart
 const ctxPie = document.getElementById('pieChart').getContext('2d');
 const pieChart = new Chart(ctxPie, {
     type: 'doughnut',
     data: {
         labels: ['Выживаний', 'Смертей'],
         datasets: [{
-            data: [62, 38, 0, 0],
+            data: [62, 38],
             borderWidth: 3,
             borderColor: [
-                '#aaaaaa',
-                '#9a8866',
                 '#9a8866',
                 '#aaaaaa',
             ],
             backgroundColor: [
-                '#aaaaaa50',
-                '#9a886650',
                 '#9a886650',
                 '#aaaaaa50',
             ],
@@ -225,6 +281,7 @@ const pieChart = new Chart(ctxPie, {
     },
 });
 
+// lineChart 
 const ctxLine = document.getElementById('lineChart').getContext('2d');
 const lineChart = new Chart(ctxLine, {
     type: 'line',
