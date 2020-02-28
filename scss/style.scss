@@ -7,6 +7,9 @@
 /* Базовые настройки */
 @import 'modules/basis';
 
+/* Основные секции */
+@import 'modules/sections';
+
 /* Тема */
 #settings {
     background-color: transparent;
@@ -124,18 +127,9 @@
 }
 
 .hero {    
-    background: #000; 
-    // url('../img/about/bg.jpg') center no-repeat;
+    background: url('../img/about/bg.jpg') center no-repeat;    
     background-position: top;
-    background-size: contain;
-}
-
-.section {
-    padding: 35px 0;
-    &-title {
-        text-align: center;
-        font-size: 36px;
-    }
+    background-size: cover;
 }
 
 /* Об игре */
@@ -182,7 +176,6 @@
         justify-content: space-between;
         &__item {
             padding: 5px 10px;
-            color: $main-color;
             font-weight: bold;
             border: 1px soild transparent;
             border-radius: 2px;
@@ -304,38 +297,6 @@
             transition: .5s ease;
                 &:hover {
                     color: $main-color;
-                }
-        }
-    }
-}
-
-/* Подвал */
-.footer {
-    margin-top: auto;
-    padding: 1px 20px;
-    background-color: rgba(0, 0, 0, 0.97);
-    box-shadow: 0px -9px 17px 6px #ffffff10;
-    z-index: 99;
-    &-icons {
-        margin-right: 7px;
-    }
-    &-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &-navigation {
-        display: flex;
-        a {
-            background-color: #ffffff10;
-            margin-left: 5px;
-            padding: 5px 10px;
-            display: block;
-            text-transform: uppercase;
-            transition: .5s ease;
-                &:hover {
-                    background: #fff url("../img/hover.png");
-                    color: #000;
                 }
         }
     }

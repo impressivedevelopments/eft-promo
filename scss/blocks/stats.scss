@@ -7,6 +7,9 @@
 /* Базовые настройки */
 @import '../modules/basis';
 
+/* Основные секции */
+@import '../modules/sections';
+
 .header {
     background-color: rgba(0, 0, 0, 0.97);
     height: 5vh;
@@ -21,6 +24,12 @@
         font-weight: bold;
         font-size: 24px;
     }
+}
+
+.hero {    
+    background:  linear-gradient(to top, #FFFFFF00 20%, #000000 80%), url('../img/about/bg.jpg') center no-repeat;    
+    background-position: top;
+    background-size: cover;
 }
 
 .menu {
@@ -66,44 +75,27 @@
         grid-template-rows: repeat(3, 400px);
         grid-gap: 20px;
     }
-    .stat-list {
-        background-color: #ffffff10;
-        padding: 20px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        &__title {
-            color: $main-color;
-            display: block;
-            font-weight: bold;
-            font-size: 22px;
-        }
-        &__statistic {
-            display: block;
-            color: $font-color;
-            font-size: 50px;
-        }
-        &__rating {
-            grid-row: 3;
-            grid-column: 1 / span 2;
-        }
-        .milk {
-            width: 200px;
-            margin: 0 auto;
-        }
-    }
     .chart {
         &-title {
             margin-bottom: 5px;
         }
         &-description {
-            color: $font-color;
+            color: #ffffff;
+            font-size: 44px;
+        }
+        &-list {            
+            background-color: #ffffff10;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            &-rating {
+                grid-row: 3;
+                grid-column: 1 / span 2;
+            }
         }
         &-small-radar, &-small-bar, 
-        &-small-pie, &-large-line {
-            padding: 20px 20px;
+        &-small-pie, &-large-line, &-list {
+            padding: 20px;
             text-align: center;
         }
         &-small-radar {

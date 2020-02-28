@@ -7,7 +7,6 @@
     <title>Escape From Tarkov - статистика</title>
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/Chart.min.css">
-    <link rel="stylesheet" href="../css/style.min.css">
     <link rel="stylesheet" href="../css/stats.min.css">
 </head>
 
@@ -35,6 +34,7 @@
     </header>
     <!-- /.header -->
     <main class="hero">
+        <!-- TODO: заполнить чем-то титульник страницы -->
         <div class="news">
             <div class="news-line-block">
                 <span class="news-line-block__item">
@@ -51,21 +51,49 @@
             <h2 class="section-title">Статистика</h2>
             <div class="container">
                 <div class="charts">
+
+                    <!-- radarChart -->
                     <div class="chart-small-radar">
-                        <h3 class="chart-title">Популярность локаций</h3>
-                        <span class="chart-description">
-                            Отношение количества сессий к локации за день и в среднем за месяц.
-                        </span>
+                        <div class="chart-title">
+                            <h3>Популярность локаций</h3>
+                            <span>
+                                Отношение количества сессий к локации за день и в среднем за месяц.
+                            </span>    
+                        </div>
                         <canvas id="radarChart" width="700" height="700"></canvas>
                     </div>
-                    <div class="stat-list">
-                        <h4 class="stat-list__title">Количество ЧВК онлайн</h4>
-                        <span class="stat-list__statistic">50000</span>
-                        <h4 class="stat-list__title">Количество сессий онлайн</h4>
-                        <span class="stat-list__statistic">15000</span>
+
+                    <!-- textChart -->
+                    <div class="chart-list">
+                        <div class="chart-title">
+                            <h3>Количество ЧВК онлайн</h3>
+                            <span>
+                                Текущее число игроков на всех серверах.
+                            </span>    
+                        </div>
+                        <span class="chart-description">93 453</span>
+                        <div class="chart-title">
+                            <h3>Количество сессий онлайн</h3>
+                            <span>
+                                Текущее число активных сессий на всех серверах.
+                            </span>    
+                        </div>                        
+                        <span class="chart-description">11 658</span>
+                        <div class="chart-title">
+                            <h3>Количество серверов</h3>
+                            <span>
+                                Текущее число активных серверов во всех регионах.
+                            </span>    
+                        </div>                        
+                        <span class="chart-description">437</span>
                     </div>
-                    <div class="stat-list stat-list__rating">
-                        <h4 class="stat-list__title">10 лучших игроков</h4>
+
+                    <!-- ratingChart -->
+                    <div class="chart-list chart-list-rating">
+                        <div class="chart-title">
+                            <h3>10 лучших игроков</h3>
+                            <span>Лучшие игроки Escape From Tarkov этого месяца</span>
+                        </div>
                         <table>
                             <thead>
                                 <tr>
@@ -83,27 +111,27 @@
                                 <tr>
                                     <td class="key">1</td>
                                     <td class="nickname">SuncheuS</td>
-                                    <td class="experience">85 404 294</td>
+                                    <td class="experience">1 404 294</td>
                                     <td class="level">40</th>
-                                    <td class="surviveRatio">75%</td>
-                                    <td class="kd">6</td>
-                                    <td class="raidCount">2500</td>
-                                    <td class="timeOnline">200ч 50м</td>
+                                    <td class="surviveRatio">35%</td>
+                                    <td class="kd">4.34</td>
+                                    <td class="raidCount">254</td>
+                                    <td class="timeOnline">243ч 50м</td>
                                 </tr>
                                 <tr>
                                     <td class="key">2</td>
                                     <td class="nickname">LexandriO</td>
-                                    <td class="experience">1</td>
+                                    <td class="experience">1 241 113</td>
                                     <td class="level">70</th>
-                                    <td class="surviveRatio">0%</td>
-                                    <td class="kd">1.1</td>
-                                    <td class="raidCount">1200</td>
+                                    <td class="surviveRatio">31%</td>
+                                    <td class="kd">3.75</td>
+                                    <td class="raidCount">198</td>
                                     <td class="timeOnline">56ч 22м</td>
                                 </tr>
                                 <tr>
                                     <td class="key">3</td>
                                     <td class="nickname">maza4kst_TV</td>
-                                    <td class="experience">85 404 250</td>
+                                    <td class="experience">804 421</td>
                                     <td class="level">70</th>
                                     <td class="surviveRatio">12%</td>
                                     <td class="kd">0.5</td>
@@ -113,107 +141,274 @@
                                 <tr>
                                     <td class="key">4</td>
                                     <td class="nickname">BakeeZy_TTV</td>
-                                    <td class="experience">85 404 250</td>
+                                    <td class="experience">657 784</td>
                                     <td class="level">70</th>
                                     <td class="surviveRatio">6%</td>
                                     <td class="kd">0.5</td>
                                     <td class="raidCount">1020</td>
-                                    <td class="timeOnline">22ч 13м</td>
+                                    <td class="timeOnline">78ч 45м</td>
                                 </tr>
                                 <tr>
                                     <td class="key">5</td>
                                     <td class="nickname">WithoutAim_TV</td>
-                                    <td class="experience">85 404 250</td>
-                                    <td class="level">70</th>
+                                    <td class="experience">648 991</td>
+                                    <td class="level">69</th>
                                     <td class="surviveRatio">52%</td>
                                     <td class="kd">1.02</td>
-                                    <td class="raidCount">1500</td>
-                                    <td class="timeOnline">22ч 13м</td>
+                                    <td class="raidCount">3678</td>
+                                    <td class="timeOnline">157ч 10м</td>
                                 </tr>
                                 <tr>
                                     <td class="key">6</td>
                                     <td class="nickname">MM-Strix</td>
-                                    <td class="experience">85 404 250</td>
-                                    <td class="level">70</th>
+                                    <td class="experience">584 281</td>
+                                    <td class="level">68</th>
                                     <td class="surviveRatio">25%</td>
                                     <td class="kd">1.1</td>
-                                    <td class="raidCount">4000</td>
+                                    <td class="raidCount">2750</td>
                                     <td class="timeOnline">22ч 13м</td>
                                 </tr>
                                 <tr>
                                     <td class="key">7</td>
                                     <td class="nickname">COPR_Dunduk</td>
-                                    <td class="experience">85 404 250</td>
-                                    <td class="level">70</th>
+                                    <td class="experience">414 224</td>
+                                    <td class="level">45</th>
                                     <td class="surviveRatio">40%</td>
                                     <td class="kd">3</td>
-                                    <td class="raidCount">2000</td>
-                                    <td class="timeOnline">22ч 13м</td>
+                                    <td class="raidCount">465</td>
+                                    <td class="timeOnline">42ч 37м</td>
                                 </tr>
                                 <tr>
                                     <td class="key">8</td>
                                     <td class="nickname">n3xt</td>
-                                    <td class="experience">85 404 250</td>
-                                    <td class="level">70</th>
+                                    <td class="experience">398 751</td>
+                                    <td class="level">28</th>
                                     <td class="surviveRatio">2%</td>
                                     <td class="kd">0.07</td>
-                                    <td class="raidCount">1200</td>
-                                    <td class="timeOnline">22ч 13м</td>
+                                    <td class="raidCount">215</td>
+                                    <td class="timeOnline">16ч 58м</td>
                                 </tr>
                                 <tr>
                                     <td class="key">9</td>
                                     <td class="nickname">Thugfresh</td>
-                                    <td class="experience">85 404 250</td>
-                                    <td class="level">70</th>
+                                    <td class="experience">394 050</td>
+                                    <td class="level">30</th>
                                     <td class="surviveRatio">11%</td>
                                     <td class="kd">1</td>
-                                    <td class="raidCount">1000</td>
-                                    <td class="timeOnline">22ч 13м</td>
+                                    <td class="raidCount">320</td>
+                                    <td class="timeOnline">28ч 13м</td>
                                 </tr>                             
                                 <tr>
                                     <td class="key">10</td>
                                     <td class="nickname">IQ_arven93_TTW</td>
-                                    <td class="experience">85 404 250</td>
-                                    <td class="level">70</th>
+                                    <td class="experience">134 250</td>
+                                    <td class="level">24</th>
                                     <td class="surviveRatio">31%</td>
                                     <td class="kd">0.5</td>
-                                    <td class="raidCount">1020</td>
-                                    <td class="timeOnline">22ч 13м</td>
+                                    <td class="raidCount">89</td>
+                                    <td class="timeOnline">16ч 57м</td>
                                 </tr>                             
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- barChart -->
                     <div class="chart-small-bar">
-                        <h3 class="chart-title">Численность фракций</h3>
-                        <span class="chart-description">
-                            Процентное соотношение игроков к фракции.
-                        </span>
+                        <div class="chart-title">
+                            <h3>Численность фракций</h3>
+                            <span>
+                                Процентное соотношение игроков к фракции.
+                            </span>
+                        </div>                        
                         <canvas id="barChart" width="0" height="700"></canvas>
                     </div>
+
+                    <!-- lineChart -->
                     <div class="chart-large-line">
-                        <h3 class="chart-title">Подсчет убитых ЧВК</h3>
-                        <span class="chart-description">
-                            Мясячное количество убитых ЧВК определенной фракции.
-                        </span>
+                        <div class="chart-title">
+                            <h3>Подсчет убитых ЧВК</h3>
+                            <span>
+                                Мясячное количество убитых ЧВК определенной фракции.
+                            </span>
+                        </div>                        
                         <canvas id="lineChart" width="0" height="400"></canvas>
                     </div>
-                    <div class="stat-list">
-                        <h4 class="stat-list__title">Часто выбираемое оружие</h4>
-                        <span class="chart-description">P90</span>
-                        <img class="stat-list__img" src="../img/stats/weapon.webp" alt="P90">
+
+                    <!-- ratingChart -->
+                    <div class="chart-list">
+                        <div class="chart-title">
+                            <h3>Часто выбираемое оружие</h3>
+                            <span>Самое популярное оружие на территории Таркова (без учета оружия диких)</span>
+                        </div> 
+                        <div class="chart-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="key">#</th>
+                                        <th class="weaponName">Оружие</th>
+                                        <th class="sellsCount">Кол-во копий, шт.</th>
+                                        <th class="killCount">Кол-во убийств</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="key">1</td>
+                                        <td class="weaponName">M4A1</td>
+                                        <td class="sellsCount">3 217 657</td>
+                                        <td class="killCount">19 951 086</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">2</td>
+                                        <td class="weaponName">AK-74M</td>
+                                        <td class="sellsCount">2 862 702</td>
+                                        <td class="killCount">18 171 308</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">3</td>
+                                        <td class="weaponName">AK-74H</td>
+                                        <td class="sellsCount">2 247 644</td>
+                                        <td class="killCount">16 752 124</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">4</td>
+                                        <td class="weaponName">AS-VAL</td>
+                                        <td class="sellsCount">1 861 552</td>
+                                        <td class="killCount">17 279 917</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">5</td>
+                                        <td class="weaponName">HK416A5</td>
+                                        <td class="sellsCount">1 511 708</td>
+                                        <td class="killCount">20 445 173</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">6</td>
+                                        <td class="weaponName">SVDS</td>
+                                        <td class="sellsCount">908 451</td>
+                                        <td class="killCount">12 077 549</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">7</td>
+                                        <td class="weaponName">Mosin</td>
+                                        <td class="sellsCount">907 981</td>
+                                        <td class="killCount">3 456 882</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">8</td>
+                                        <td class="weaponName">F1</td>
+                                        <td class="sellsCount">717 628</td>
+                                        <td class="killCount">505 141</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">9</td>
+                                        <td class="weaponName">P90</td>
+                                        <td class="sellsCount">715 928</td>
+                                        <td class="killCount">8 527 950</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">10</td>
+                                        <td class="weaponName">M1A</td>
+                                        <td class="sellsCount">543 241</td>
+                                        <td class="killCount">3 222 759</th>
+                                    </tr>                             
+                                </tbody>
+                            </table>
+                        </div>                       
                     </div>
+
+                    <!-- pieChart -->
                     <div class="chart-small-pie">
-                        <h3 class="chart-title">Успешность рейдов</h3>
-                        <span class="chart-description">
-                            Процентное соотношение выживаний и смертей.
-                        </span>
+                        <div class="chart-title">
+                            <h3>Успешность рейдов</h3>
+                            <span>
+                                Процентное соотношение выживаний и смертей.
+                            </span>
+                        </div>
                         <canvas id="pieChart" width="400" height="400"></canvas>
                     </div>
-                    <div class="stat-list">
-                        <h4 class="stat-list__title">Самый продаваемый предмет</h4>
-                        <span class="chart-description">Сгущенка</span>
-                        <img class="stat-list__img milk" src="../img/stats/milk.webp" alt="condensed milk">
+
+                    <!-- ratingChart -->
+                    <div class="chart-list">
+                        <div class="chart-title">
+                            <h3>Самый продаваемый предмет</h3>
+                            <span>Наибольшее число проданных (игроками) предметов на барахолке</span>    
+                        </div>
+                        <div class="chart-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="key">#</th>
+                                        <th class="goodname">Товар</th>
+                                        <th class="sellsCount">Кол-во копий, шт</th>
+                                        <th class="totalPrice">Суммарная стоимость</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="key">1</td>
+                                        <td class="goodname">Сгущенка</td>
+                                        <td class="sellsCount">5 454 294</td>
+                                        <td class="totalPrice">104 247 756</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">2</td>
+                                        <td class="goodname">M995</td>
+                                        <td class="sellsCount">5 404 078</td>
+                                        <td class="totalPrice">67 573 122</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">3</td>
+                                        <td class="goodname">7Н39</td>
+                                        <td class="sellsCount">4 981 179</td>
+                                        <td class="totalPrice">77 189 653</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">4</td>
+                                        <td class="goodname">LedX</td>
+                                        <td class="sellsCount">865 453</td>
+                                        <td class="totalPrice">25 687 463</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">5</td>
+                                        <td class="goodname">Жук 6А</td>
+                                        <td class="sellsCount">724 144</td>
+                                        <td class="totalPrice">5 357 984</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">6</td>
+                                        <td class="goodname">Fast MT</td>
+                                        <td class="sellsCount">404 294</td>
+                                        <td class="totalPrice">5 124 752</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">7</td>
+                                        <td class="goodname">M61</td>
+                                        <td class="sellsCount">401 941</td>
+                                        <td class="totalPrice">20 245 771</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">8</td>
+                                        <td class="goodname">7H12</td>
+                                        <td class="sellsCount">377 458</td>
+                                        <td class="totalPrice">6 105 440</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">9</td>
+                                        <td class="goodname">Colt M4A1</td>
+                                        <td class="sellsCount">351 221</td>
+                                        <td class="totalPrice">4 157 702</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="key">10</td>
+                                        <td class="goodname">РК-2</td>
+                                        <td class="sellsCount">288 415</td>
+                                        <td class="totalPrice">2 422 198</th>
+                                    </tr>                             
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
