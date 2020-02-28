@@ -37,7 +37,8 @@ a {
 /* Заголовки */
 h1,
 h2,
-h3 {
+h3,
+h4 {
     color: $main-color;
     margin: 0;
 }
@@ -88,4 +89,20 @@ img {
 .active {
     color: #000 !important;
     background-color: $main-color;
+}
+
+/* Таблицы */
+
+table {
+    border-spacing: 0px;
+}
+td {
+    padding: 5px;
+}
+th {
+    padding: 10px 0px;
+    text-transform: uppercase;
+    border-collapse: collapse;
+    border-bottom: 1px solid $main-color;
+
 }
