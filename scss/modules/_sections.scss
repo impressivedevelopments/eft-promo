@@ -1,3 +1,59 @@
+// Шапка
+.header {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-shadow: 0px 9px 17px 6px #ffffff10;
+    z-index: 99;
+    .main-menu {
+        padding: 5px 20px;
+        background-color: rgba(0, 0, 0, 0.97);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu {
+            &-list {
+                &__item {
+                    padding: 0 10px;
+                    transition: .5s ease;
+        
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+    &-logo {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .news-line {
+        width: 100%;
+        background-color: #00000090;
+        padding: 10px 0;
+        overflow: hidden;
+        position: relative;
+        &__text {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            animation: marquee 40s infinite linear;
+        }
+    }
+}
+
+// Главное изобрадение на странице
+.main-screen {
+    height: 100vh;
+}
+
+// Общая стилистика секций
 .section {
     padding: 35px 0;
     &-title {
@@ -6,8 +62,20 @@
     }
 }
 
-/* Подвал */
+// Подвал 
 .footer {
+    #settings {
+        background-color: transparent;
+        color: #ffffff;
+        margin-left: 5px;
+        background-color: #ffffff10;
+        padding: 5px 10px;
+
+        &:hover {
+            background: #fff url("../img/hover.png");
+            color: #000;
+        }
+    }
     margin-top: auto;
     padding: 1px 20px;
     background-color: rgba(0, 0, 0, 0.97);
@@ -27,6 +95,7 @@
             background-color: #ffffff10;
             margin-left: 5px;
             padding: 5px 10px;
+            color: #fff;
             display: block;
             text-transform: uppercase;
             transition: .5s ease;

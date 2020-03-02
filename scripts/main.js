@@ -15,21 +15,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 500);
     });
 
-    // плавная прокрутка страницы
-    const anchors = document.querySelectorAll('a[href*="#"]');
-    anchors.forEach((elem) => {
-        elem.addEventListener('click', e => {
-            e.preventDefault();
-
-            const blockID = elem.getAttribute('href').substr(1);
-
-            document.getElementById(blockID).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    });
-
     // анимация
     new WOW().init();
 
@@ -79,6 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
         };
 
         tabHeader.addEventListener('click', (event) => {
+            event.preventDefault();
             let target = event.target;
             target = target.closest('.order-list__item');
 
@@ -94,20 +80,20 @@ window.addEventListener('DOMContentLoaded', () => {
     tabs();
 
     // стрелка наверх
-    const arrowUp = document.querySelector('.arrow-up');
-    let time;
+    // const arrowUp = document.querySelector('.arrow-up');
+    // let time;
 
-    const pageOfTop = () => {
-        window.pageYOffset > 0 ? (window.scrollBy(0, -100), time = setTimeout(pageOfTop, 20)) : clearTimeout(time);
-    };
+    // const pageOfTop = () => {
+    //     window.pageYOffset > 0 ? (window.scrollBy(0, -100), time = setTimeout(pageOfTop, 20)) : clearTimeout(time);
+    // };
 
-    arrowUp.addEventListener('click', pageOfTop);
+    // arrowUp.addEventListener('click', pageOfTop);
 
-    const checkTop = () => {
-        (window.pageYOffset >= 1000) ? arrowUp.style.cssText = `display: block;`: arrowUp.style.cssText = `display: none;`;
-    };
+    // const checkTop = () => {
+    //     (window.pageYOffset >= 1000) ? arrowUp.style.cssText = `display: block;`: arrowUp.style.cssText = `display: none;`;
+    // };
 
-    window.addEventListener('scroll', checkTop);
+    // window.addEventListener('scroll', checkTop);
 
     
     // выпадающий список
@@ -142,198 +128,4 @@ window.addEventListener('DOMContentLoaded', () => {
             accordeon(target);
         }
     });
-});
-
-// графики
-
-// radarChart
-const ctxRadar = document.getElementById('radarChart').getContext('2d');
-const radarChart = new Chart(ctxRadar, {
-    type: 'radar',
-    data: {
-        labels: ['Завод', 'Берег', 'Развязка', 'Таможня', 'Лес', 'Резерв', 'Лаборатория', 'Улицы Таркова'],
-        datasets: [{
-            label: 'Количество сессий за день',
-            data: [54, 37, 46, 82, 34, 79, 50, 80],
-            pointBacgroundColor: '#9a8866',
-            backgroundColor: '#9a886650',
-            borderColor: '#9a8866',
-        }, 
-        {
-            label: 'Количество сессий в среднем за месяц',
-            data: [60, 74, 42, 86, 52, 52, 55, 102],
-            pointBacgroundColor: '#aaaaaa',
-            backgroundColor: '#aaaaaa50',
-            borderColor: '#aaaaaa'},
-        ]
-    },
-    options: {        
-        legend: {
-            labels: {
-                fontColor: '#aaaaaa',
-                fontFamily: 'Bender'
-            }
-        },
-        scale: {
-            angleLines: {
-                display: true,
-                color: '#ffffff25'
-            },
-            gridLines: {
-                display: true,
-                color: '#ffffff25'
-            },
-            ticks: {                
-                backdropColor: 'transparent',           
-                fontColor: '#aaaaaa',
-                fontFamily: 'Bender'
-            }
-        }
-    },
-});
-
-// barChart
-const ctxBar = document.getElementById('barChart').getContext('2d');
-const barChart = new Chart(ctxBar, {
-    type: 'bar',
-    data: {
-        labels: ['ЧВК'],
-        datasets: [{
-            label: 'BEAR',
-            data: [53],
-            borderWidth: 3,
-            minBarLength: 6,
-            borderColor: ['#9a8866'],
-            backgroundColor: ['#9a886650'],
-        },
-        {
-            label: 'USEC',
-            data: [44],
-            borderWidth: 3,
-            minBarLength: 6,
-            borderColor: ['#aaaaaa'],
-            backgroundColor: ['#aaaaaa50'],
-        },
-        {
-            label: 'SCAV',
-            data: [3],
-            borderWidth: 3,
-            minBarLength: 6,
-            borderColor: ['#aaaaaa'],
-            backgroundColor: ['transparent'],
-        }
-    ]
-    },
-    options: { 
-        legend: {
-            labels: {
-                fontColor: '#aaaaaa',
-                fontFamily: 'Bender'
-            }
-        },
-        scales: {            
-          xAxes: [{
-            display: true,
-            gridLines: {
-              display: true,
-              color: '#ffffff25',
-            },
-          }],
-          yAxes: [{
-            display: true,
-            gridLines: {
-              display: true,
-              color: '#ffffff25',
-            },
-          }]
-        }
-    },
-});
-
-// pieChart
-const ctxPie = document.getElementById('pieChart').getContext('2d');
-const pieChart = new Chart(ctxPie, {
-    type: 'doughnut',
-    data: {
-        labels: ['Выживаний', 'Смертей'],
-        datasets: [{
-            data: [62, 38],
-            borderWidth: 3,
-            borderColor: [
-                '#9a8866',
-                '#aaaaaa',
-            ],
-            backgroundColor: [
-                '#9a886650',
-                '#aaaaaa50',
-            ],
-        },]
-    },
-    
-    options: {
-        cutoutPercentage: 25,        
-        legend: {
-            labels: {
-                fontColor: '#aaaaaa',
-                fontFamily: 'Bender'
-            }
-        },
-    },
-});
-
-// lineChart 
-const ctxLine = document.getElementById('lineChart').getContext('2d');
-const lineChart = new Chart(ctxLine, {
-    type: 'line',
-    data: {
-        labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-        datasets: [{
-            label: 'Убито USEC',
-            data: [1824, 4231, 965, 521, 2452, 8566, 1200, 7620, 2752, 6578, 6211, 2227],
-            backgroundColor: '#9a886650',
-            borderColor: '#9a8866',
-        },
-        {
-            label: 'Убито BEAR',
-            data: [6454, 2431, 7565, 4201, 9452, 5560, 2400, 6080, 4562, 1448, 6751, 1177], 
-            backgroundColor: '#aaaaaa50',
-            borderColor: '#aaaaaa',
-        }],
-    },
-    options: { 
-        legend: {
-            labels: {
-                fontColor: '#aaaaaa',
-                fontFamily: 'Bender'
-            }
-        },
-        scales: {            
-          xAxes: [{
-            display: true,
-            gridLines: {
-              display: true,
-              color: '#ffffff25',
-            },
-            scaleLabel: {
-              display: true,
-              labelString: 'Месяц',              
-              fontColor: '#aaaaaa',
-              fontFamily: 'Bender'
-            },
-          }],
-          yAxes: [{
-            display: true,
-            gridLines: {
-              display: true,
-              color: '#ffffff25',
-            },
-            scaleLabel: {
-              display: true,
-              labelString: 'Убийства',        
-              fontColor: '#aaaaaa',
-              fontFamily: 'Bender'
-            }
-          }]
-        }
-    },
 });

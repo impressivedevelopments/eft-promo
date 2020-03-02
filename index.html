@@ -15,47 +15,43 @@
 <body>
 
     <header class="header">
-        <div id="scene">
-            <div class="layer factory-theme-bg layer-bg" data-speedX="5" data-speedY="3"></div>
-            <div class="layer factory-theme-obj layer-obj" data-speedX="60" data-speedY="40">
-                <img class="factory-theme-obj__img" src="img/theme/lamp.webp" alt="">
-            </div>
-            <div class="layer layer-logo" data-speedX="10" data-speedY="8">
-                <img src="img/logo.webp" alt="">
-            </div>
-            <nav class="layer layer-menu" data-speedX="0" data-speedY="0">
-                <div class="attention m-top m-bottom">
-                    <span class="attention-bold">
-                        Внимание! Это Бета-версия Escape From Tarkov, предназначена для тестирования.
-                    </span>
-                    Она не отображает финального качества продукта. Спасибо за понимание и поддержку. Удачи!
-                </div>
-                <ul>
-                    <li class="layer-menu__item">
-                        <a href="./pages/stats.html">Статистика</a>
-                    </li>
-                    <li class="layer-menu__item">
-                        <a href="#">Форум</a>
-                    </li>
-                    <li class="layer-menu__item">
-                        <a href="#">Поддержка</a>
-                    </li>
-                    <li class="layer-menu__item">
-                        <a href="#" class="wiki">WIKI</a>
-                    </li>
+        <div class="main-menu">
+            <a href="./index.html" class="header-logo">
+                Batllestate Games </a>
+            <nav class="menu">
+                <ul class="menu-list">
+                    <a href="./pages/stats.html">
+                        <li class="menu-list__item">Статистика</li>
+                    </a>
+                    <a href="#">
+                        <li class="menu-list__item">Форум</li>
+                    </a>
+                    <a href="#">
+                        <li class="menu-list__item">Поддержка</li>
+                    </a>
+                    <a href="#">
+                        <li class="menu-list__item">WIKI</li>
+                    </a>
                 </ul>
-                <a href="#section-about">
-                    <img class="scroll animated infinite pulse" src="./img/scroll.svg" alt="">
-                </a>
             </nav>
+        </div>
+        <div class="news-line">
+            <span class="news-line__text">
+                Важные новости. Сегодня на территории города Тарков
+                погибло более 3000 человек, мирных жителей среди пострадавших к счастью нет.
+                Группы частной военной компании BEAR всеми методами стараются подавить восстание
+                протестантов.
+            </span>
         </div>
     </header>
 
-    <!-- FIXME пофиксить прыгающий backgound у main -->
     <main class="hero">
+
+        <div class="main-screen main-screen-index-page"></div>
+        <!-- /.main-screen -->
+
         <section class="section about" id="section-about">
             <div class="container">
-                <img class="bs-logo" src="./img/bs_logo.webp" alt="battle state logo">
                 <h2 class="section-title">Об игре</h2>
                 <p>
                     Escape from Tarkov / Побег из Таркова - это хардкорная реалистичная сюжетная многопользовательская
@@ -624,7 +620,7 @@
     </div>
 
     <!-- Стрелка вверх -->
-    <button class="arrow-up">🔺</button>
+    <!-- <button class="arrow-up">🔺</button> -->
 
 
     <!-- JQuery -->
@@ -633,8 +629,6 @@
     <script src="./scripts/plugins/jquery.fancybox.min.js"></script>
     <!-- Библиотека анимации -->
     <script src="./scripts/plugins/wow.min.js"></script>
-    <!-- Параллакс -->
-    <script src="./scripts/plugins/parallax.js"></script>
     <!-- Слайдер -->
     <script src="./scripts/plugins/swiper.min.js"></script>
     <!-- Основной скрипт -->

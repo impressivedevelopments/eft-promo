@@ -1,9 +1,10 @@
-/* Базовые настройки */
+// Базовые настройки
 * {
     box-sizing: border-box;
 }
 
 body {
+    background-color: #000;
     cursor: url("../img/cursor.cur") 2 2, pointer;
     color: $font-color;
     margin: 0;
@@ -34,7 +35,7 @@ a {
     text-decoration: none;
 }
 
-/* Заголовки */
+// Заголовки
 h1,
 h2,
 h3,
@@ -91,8 +92,7 @@ img {
     background-color: $main-color;
 }
 
-/* Таблицы */
-
+// Таблицы
 table {
     border-spacing: 0px;
 }
@@ -108,4 +108,57 @@ th {
     border-collapse: collapse;
     border-bottom: 1px solid $main-color;
     color: #ffffff;
+}
+
+
+// Прелоадер 
+.preloader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 999998;
+}
+.spiner {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 10px solid #000;
+    border-radius: 50%;
+    border-right-color: #ffffff50;
+    animation: spin 500ms infinite linear;
+    z-index: 999998;
+}
+.loaded_hiding .preloader {
+    transition: 0.5s opacity;
+    opacity: 0;
+}
+.loaded .preloader,
+.loaded .spiner {
+    display: none;
+}
+
+// Анимации
+
+// Анимация спинера
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+// Анимация бегущей строки
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%)
+    }
 }

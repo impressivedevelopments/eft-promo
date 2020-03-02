@@ -1,70 +1,24 @@
-/* Шрифты */
+// Шрифты
 @import '../modules/font';
-
-/* Цвета */
+// Цвета
 @import '../modules/colors';
-
-/* Базовые настройки */
+// Базовые настройки
 @import '../modules/basis';
-
-/* Основные секции */
+// Основные секции
 @import '../modules/sections';
 
-.header {
-    background-color: rgba(0, 0, 0, 0.97);
-    height: 5vh;
-    padding: 1px 20px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &-logo {
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 24px;
-    }
-}
-
 .hero {    
-    background:  linear-gradient(to top, #FFFFFF00 20%, #000000 80%), url('../img/about/bg.jpg') center no-repeat;    
+    background: linear-gradient(to top, #FFFFFF00 20%, #000000 80%), url('../img/about/bg.jpg') center no-repeat;    
     background-position: top;
     background-size: cover;
 }
 
-.menu {
-    &-list {
-        &__item {
-            padding: 0 10px;
-            transition: .5s ease;
-
-            &:hover {
-                color: $main-color;
-            }
-        }
-    }
-}
-
-.news {
-    height: 95vh;
-    background: radial-gradient(rgba(255, 255, 255, 0) 50%, #000 80%), url('../../img/stats/news-bg.jpg');
+.main-screen-stats-page {
+    background: linear-gradient(to bottom, #ffffff00 70%, #000 100%), url('../../img/stats/news-bg.jpg');
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom center;
-
-    &-line-block {
-        width: 100%;
-        background-color: #00000075;
-        padding: 10px 0;
-        overflow: hidden;
-        position: relative;
-        &__item {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            animation: marquee 40s infinite linear;
-        }
-    }
 }
 
 .stats {
@@ -112,14 +66,4 @@
             grid-column: 1 / span 3;
         }
     }    
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%)
-    }
 }

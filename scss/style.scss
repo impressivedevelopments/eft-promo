@@ -1,139 +1,30 @@
-/* Шрифты */
+// Шрифты
 @import 'modules/font';
-
-/* Цвета */
+// Цвета
 @import 'modules/colors';
-
-/* Базовые настройки */
+// Базовые настройки
 @import 'modules/basis';
-
-/* Основные секции */
+// Основные секции
 @import 'modules/sections';
 
-/* Тема */
-#settings {
-    background-color: transparent;
-    color: #ffffff;
-    margin-left: 5px;
-    background-color: #ffffff10;
-    padding: 5px 10px;
-
-    &:hover {
-        background: #fff url("../img/hover.png");
-        color: #000;
-    }
-}
-
-.factory-theme {
-    &-bg {
-        background: radial-gradient(rgba(255, 255, 255, 0) 0%, #000 75%), url("../img/theme/factory-theme-bg.webp") center no-repeat;
-        background-size: cover;
-    }
-
-    &-obj {
-        top: -15%;
-        left: 0;
-        right: -30%;
-        bottom: 0;
-
-        &__img {
-            animation: swang 5s ease-in-out infinite;
-        }
-    }
-}
-
-/* Шапка */
-#scene {
-    max-width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative; 
-    .layer {
-        position: absolute;
-        &-bg {
-            width: 110%;
-            top: -10%;
-            left: -10%;
-            right: 0;
-            bottom: 0;           
-        }
-        &-logo {
-            width: 1100px;
-            top: 5%;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-        &-menu {            
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-
-            bottom: 0;
-            left: 0;
-            right: 0;
-
-            z-index: 10;
-            &__item {
-                font-size: 38px;
-                text-align: center;
-                text-transform: uppercase;
-                margin: 20px 0;
-                a {
-                    padding: 0 20px;
-                    border: 1px solid transparent;
-                    border-radius: 3px;
-                    transition: .5s ease;
-                    &:hover {
-                        background: #fff url("../img/hover.png");
-                        background-size: cover;
-                        color: #000;
-                    }
-                }
-            }
-        }
-        &-obj {
-            z-index: 5;
-        }
-    }    
-}
-
-.attention {
-    width: 1000px;
-    padding: 15px 80px;
-    background: $attention-color;
-    color: #000;
-    font-size: 18px;
-    &-bold {
-        font-weight: bold;
-        font-size: 21px;
-    }
-    &-icon {
-        position: absolute;
-        left: 24.5%;
-        top: 11.8%;
-    }
+.main-screen-index-page {
+    background: linear-gradient(to bottom, #ffffff00 70%, #000 100%), url('../img/about/main-bg.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
 }
 
 .scroll {
     width: auto;
 }
 
-.bs-logo {
-    width: 350px;
-    margin: 0 auto;
-    display: block;
-}
-
-.hero {    
-    background: url('../img/about/bg.jpg') center no-repeat;    
-    background-position: top;
+// Об игре 
+.about {      
+    background: linear-gradient(to top, #FFFFFF00 75%, #000000 100%), url('../img/about/bg.jpg') center no-repeat;    
+    background-position: center center;
     background-size: cover;
-}
-
-/* Об игре */
-.about {         
+       
     &-content {
         display: flex;
         align-items: flex-start;
@@ -168,7 +59,7 @@
     }
 }
 
-/* Предзаказ */
+// Предзаказ 
 .order {
     &-list {
         padding: 20px 0px;
@@ -176,6 +67,7 @@
         justify-content: space-between;
         &__item {
             padding: 5px 10px;
+            color: #fff;
             font-weight: bold;
             border: 1px soild transparent;
             border-radius: 2px;
@@ -274,7 +166,7 @@
     }
 }
 
-/* Правила */
+// Правила 
 .rules {
     color: $font-color;
     text-align: center;
@@ -302,7 +194,7 @@
     }
 }
 
-/* Слайдер */
+// Слайдер 
 .swiper {
     &-container {
         &-m, &-g {           
@@ -327,6 +219,7 @@
             justify-content: center;
             align-items: center;
             &-title {
+                color: #fff;
                 font-size: 50px;
                 font-weight: bold;
                 text-transform: uppercase;
@@ -351,68 +244,11 @@
     }
 }
 
-/* Прелоадер */
-.preloader {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: #fff;
-    z-index: 999998;
-}
-.spiner {
-    position: absolute;
-    top: 45%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    border: 10px solid #000;
-    border-radius: 50%;
-    border-right-color: #ffffff50;
-    animation: spin 500ms infinite linear;
-    z-index: 999998;
-}
-.loaded_hiding .preloader {
-    transition: 0.5s opacity;
-    opacity: 0;
-}
-.loaded .preloader,
-.loaded .spiner {
-    display: none;
-}
-
-/* Стрелка наверх */
+// Стрелка наверх
 .arrow-up {
     display: none;
     position: fixed;
     top: 5%;
     right: 5%;
     background-color: transparent;
-}
-
-/* Анимации */
-
-// анимация спинера
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-// анимация лампы
-@keyframes swang {
-    0% {
-        transform: rotate(2deg);
-    }
-
-    50% {
-        transform: rotate(-2deg);
-    }
-
-    100% {
-        transform: rotate(2deg);
-    }
 }
