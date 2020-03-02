@@ -48,9 +48,44 @@
     }
 }
 
+.comments {
+
+    &-line {
+        width: 900px;
+        display: flex;
+        justify-content: space-between;
+        &__author {
+            display: block;
+            padding: 5px 0px;
+            font-size: 20px;
+            color: $main-color;
+            font-weight: bold;
+        }
+        &__item {
+            background-color: rgba(0, 0, 0, 0.4);
+            max-width: 300px;
+            margin-bottom: 50px;
+            padding: 0px 5px;
+            box-shadow: 1px 1px 20px transparent;
+            &:hover {
+                box-shadow: 1px 1px 20px $main-color;
+            }
+            &_mr {
+                margin-right: 45px;
+            }
+            &_ml {
+                margin-left: 45px;
+            }
+        }
+    }
+}
+
 // Главное изобрадение на странице
 .main-screen {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 // Общая стилистика секций
